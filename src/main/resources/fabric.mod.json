@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "effects_are_effects",
+	"version": "${version}",
+	"name": "Effects Are Effects",
+	"description": "Adds a status effect for Burning and makes the Freezing status effect work for Powder Snow.",
+	"authors": [
+		"cassiancc"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/effects-are-effects",
+		"sources": "https://github.com/cassiancc/Effects-Are-Effects",
+		"issues": "https://github.com/cassiancc/Effects-Are-Effects/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/effects_are_effects/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"cc.cassian.effects.EffectsAreEffects"
+		]
+	},
+	"mixins": [
+		"effects_are_effects.mixins.json"
+	]
+}

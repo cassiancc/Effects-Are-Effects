@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "cc.cassian.effects.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "burning.EntityMixin",
+    "burning.LivingEntityMixin",
+    "freezing.EntityMixin",
+    "freezing.InsideBlockEffectTypeMixin",
+    "freezing.MobEffectMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+	}
+}

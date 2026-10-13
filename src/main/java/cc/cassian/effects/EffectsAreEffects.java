@@ -1,0 +1,23 @@
+package cc.cassian.effects;
+
+import cc.cassian.effects.registry.ModEffects;
+import net.fabricmc.api.ModInitializer;
+
+import net.minecraft.resources.Identifier;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class EffectsAreEffects implements ModInitializer {
+	public static final String MOD_ID = "effects_are_effects";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	@Override
+	public void onInitialize() {
+		ModEffects.init();
+	}
+
+	public static Identifier id(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
+	}
+}
