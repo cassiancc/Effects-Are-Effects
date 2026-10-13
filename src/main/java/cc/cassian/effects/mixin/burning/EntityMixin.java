@@ -12,10 +12,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public class EntityMixin {
 	@Inject(at = @At(value = "RETURN"), method = "isOnFire")
-	private void init(CallbackInfoReturnable<Boolean> cir) {
+	private void addBurningEffect(CallbackInfoReturnable<Boolean> cir) {
 		if (((Entity) (Object) this) instanceof LivingEntity livingEntity) {
 			if (cir.getReturnValue()) {
-				livingEntity.addEffect(new MobEffectInstance(ModEffects.BURNING, livingEntity.getRemainingFireTicks(), 0, false, true));
+				livingEntity.addEffect(new MobEffectInstance(ModEffects.BURNING, livingEntity.getRemainingFireTicks(), 0, true, true));
 			} else {
 				livingEntity.removeEffect(ModEffects.BURNING);
 			}

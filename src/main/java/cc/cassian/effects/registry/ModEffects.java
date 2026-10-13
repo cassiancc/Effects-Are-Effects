@@ -9,15 +9,15 @@ import net.minecraft.world.effect.MobEffectCategory;
 
 public class ModEffects {
 	public static final Holder<MobEffect> BURNING =
-			Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, EffectsAreEffects.id("burning"), new BurningEffect());
+			Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, EffectsAreEffects.of("burning"), new BurningEffect(MobEffectCategory.HARMFUL, 0xeb6607));
 
 	public static void init() {
 
 	}
 
 	private static class BurningEffect extends MobEffect {
-		protected BurningEffect() {
-			super(MobEffectCategory.HARMFUL, 0);
+		protected BurningEffect(MobEffectCategory category, int color) {
+			super(category, color);
 		}
 	}
 }

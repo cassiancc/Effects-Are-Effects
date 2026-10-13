@@ -20,7 +20,7 @@ public abstract class LivingEntityMixin extends Entity {
 	}
 
 	@Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/effect/MobEffectInstance;onEffectStarted(Lnet/minecraft/world/entity/LivingEntity;)V"), method = "addEffect(Lnet/minecraft/world/effect/MobEffectInstance;Lnet/minecraft/world/entity/Entity;)Z")
-	private void init(MobEffectInstance newEffect, @Nullable Entity source, CallbackInfoReturnable<Boolean> cir, @Local(name = "changed") boolean changed) {
+	private void setOnFire(MobEffectInstance newEffect, @Nullable Entity source, CallbackInfoReturnable<Boolean> cir, @Local(name = "changed") boolean changed) {
 		if (changed && newEffect.is(ModEffects.BURNING) && !this.isOnFire()) {
 			this.setRemainingFireTicks(newEffect.getDuration());
 			this.setSharedFlagOnFire(true);

@@ -86,9 +86,9 @@ dependencies {
 //	compileOnly("cc.cassian.rrv:reliable-recipe-viewer-fabric:${property("rrv_version")}") {
 //		isTransitive = false
 //	}
-//	localRuntime("cc.cassian.rrv:reliable-recipe-viewer-fabric:${property("rrv_version")}") {
-//		isTransitive = false
-//	}
+	localRuntime("cc.cassian.rrv:reliable-recipe-viewer-fabric:${property("rrv_version")}") {
+		isTransitive = false
+	}
 
 }
 
