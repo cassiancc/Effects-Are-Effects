@@ -8,7 +8,9 @@
 
 ## Installation
 
-Effects are Effects is a client and server mod. It has no dependencies, as it includes the necessary Fabric API modules for the mod to work.
+Effects Are Effects is a client and server mod. Its dependencies are listed below.
+
+- [Fabric API](https://modrinth.com/mod/fabric-api) is required on Fabric.
 
 ## FAQ
 
@@ -17,4 +19,9 @@ Effects are Effects is a client and server mod. It has no dependencies, as it in
 
 ## Credits
 
-Burning sprite was designed by ProbablyEkho.
+[![Code license (MIT)](https://img.shields.io/badge/code%20license-MIT-green.svg?style=flat-square)](https://github.com/cassiancc/effects-are-effects)
+
+
+Effects Are Effects is distributed under the open-source MIT license. Note that this only applies to the code.
+
+Burning sprite was designed by [ProbablyEkho](https://modrinth.com/user/ProbablyEkho).

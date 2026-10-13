@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
 	"id": "effects_are_effects",
-	"version": "${version}",
-	"name": "Effects Are Effects",
-	"description": "Adds a status effect for Burning and makes the Freezing status effect work for Powder Snow.",
+	"version": "${mod_version}",
+	"name": "${mod_name}",
+	"description": "${mod_description}",
 	"authors": [
 		"cassiancc"
 	],
@@ -25,5 +25,8 @@
 	},
 	"mixins": [
 		"effects_are_effects.mixins.json"
-	]
+	],
+	"depends": {
+		"fabric-api": "*"
+	}
 }
