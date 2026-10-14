@@ -15,16 +15,15 @@
 		"sources": "https://github.com/cassiancc/Effects-Are-Effects",
 		"issues": "https://github.com/cassiancc/Effects-Are-Effects/issues"
 	},
-	"license": "MIT",
+	"license": "${mod_license}",
 	"icon": "assets/effects_are_effects/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"cc.cassian.effects.EffectsAreEffects",
 			"cc.cassian.effects.fabric.FabricEntrypoint"
 		],
 		"client": [
-			"cc.cassian.effects.client.EffectsAreEffectsClient"
+			"cc.cassian.effects.fabric.FabricClientEntrypoint"
 		]
 	},
 	"mixins": [
@@ -32,8 +31,5 @@
 	],
 	"depends": {
 		"fabric-api": "*"
-	},
-	"custom": {
-		"launchpad:compatible": true
 	}
 }

@@ -1,6 +1,7 @@
 package cc.cassian.effects.registry;
 
 import cc.cassian.effects.EffectsAreEffects;
+//? fabric
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -12,6 +13,7 @@ public class ModParticleTypes {
 
 
 	private static SimpleParticleType register(final String name, final boolean overrideLimiter) {
+		//~ if fabric 'new SimpleParticleType'-> 'FabricParticleTypes.simple'
 		return Registry.register(BuiltInRegistries.PARTICLE_TYPE, EffectsAreEffects.of(name), FabricParticleTypes.simple(overrideLimiter));
 	}
 	//?}

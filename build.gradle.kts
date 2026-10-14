@@ -24,6 +24,7 @@ tasks.named<ProcessResources>("processResources") {
 		this["minecraft"] = prop("deps.minecraft")
 		this["mod_name"] = prop("mod.name")
 		this["mod_description"] = prop("mod.description")
+		this["mod_license"] = prop("mod.license")
 	}
 
 	filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml", "META-INF/mods.toml")) {
@@ -171,6 +172,8 @@ dependencies {
 	if (fabric) {
 		modImplementation("net.fabricmc:fabric-loader:${property("deps.fabric_loader")}")
 		modImplementation("net.fabricmc.fabric-api:fabric-api:${property("deps.fabric_api")}")
+	} else {
+		forgeUserdev("net.neoforged:neoforge:${property("deps.neoforge")}:userdev")
 	}
 
 	if (hasProperty("deps.modmenu"))

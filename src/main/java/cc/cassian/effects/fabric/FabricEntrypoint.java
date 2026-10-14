@@ -1,6 +1,7 @@
 //? fabric {
 package cc.cassian.effects.fabric;
 
+import cc.cassian.effects.EffectsAreEffects;
 import cc.cassian.effects.registry.ModEffects;
 import cc.cassian.effects.registry.ModItems;
 import cc.cassian.effects.registry.ModPotions;
@@ -22,6 +23,8 @@ import net.minecraft.world.item.alchemy.Potions;
 public class FabricEntrypoint implements ModInitializer {
 	@Override
 	public void onInitialize() {
+
+ 		EffectsAreEffects.onInitialize();
 		//? if >26.1.2 {
 		AdvancementEvents.MODIFY.register((identifier, builder, advancementSource, provider) -> {
 			String name = "effects_are_effects";
