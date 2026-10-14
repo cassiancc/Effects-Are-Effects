@@ -14,20 +14,21 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(net.minecraft.world.entity.InsideBlockEffectType.class)
 public class InsideBlockEffectTypeMixin {
 	//? if >26 {
+	//~ if >26.3 'Lnet/minecraft/world/entity/Entity;setTicksFrozen(I)V'->'Lnet/minecraft/world/entity/Entity;freezeForTicks(I)V'
 	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;setTicksFrozen(I)V"), method = "lambda$static$0")
-	private static void init(Entity instance, int numberOfTicks, Operation<Void> original) {
+	private static void addFreezing(Entity instance, int numberOfTicks, Operation<Void> original) {
 	//?} else {
 	/*@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V", ordinal = 0), method = "aiStep")
-	private static void init(LivingEntity instance, int i, Operation<Void> original) {
+	private static void addFreezing(LivingEntity instance, int i, Operation<Void> original) {
 	*///?}
 		if (instance instanceof LivingEntity livingEntity) {
-			livingEntity.addEffect(new MobEffectInstance(ModEffects.FREEZING, 1, 0, true, true));
+			livingEntity.addEffect(new MobEffectInstance(ModEffects.FREEZING, numberOfTicks, 0, true, true));
 		}
 	}
 
 	//? if <26 {
 	/*@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V", ordinal = 1), method = "aiStep")
-	private static void clear(LivingEntity instance, int i, Operation<Void> original) {
+	private static void clearFreezing(LivingEntity instance, int i, Operation<Void> original) {
 		if (instance instanceof LivingEntity livingEntity) {
 			livingEntity.removeEffect(ModEffects.FREEZING);
 		}

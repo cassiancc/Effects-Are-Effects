@@ -1,6 +1,7 @@
 package cc.cassian.effects.registry;
 
 import cc.cassian.effects.references.ModPotionIds;
+import cc.cassian.effects.util.ModUtil;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -23,6 +24,6 @@ public class ModPotions {
 	}
 
 	public static void init() {
-
+		ModUtil.addAlias(BuiltInRegistries.POTION, "ice_ball");
 	}
 }

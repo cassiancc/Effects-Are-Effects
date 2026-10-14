@@ -1,6 +1,7 @@
 package cc.cassian.effects.registry;
 
 import cc.cassian.effects.references.ModEntityTypeIds;
+import cc.cassian.effects.util.ModUtil;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
@@ -30,6 +31,7 @@ public class ModEntityTypes {
 	}
 
 	public static void init() {
-
+		//? if >26.3
+		//ModUtil.addAlias(BuiltInRegistries.ENTITY_TYPE, "ice_ball");
 	}
 }

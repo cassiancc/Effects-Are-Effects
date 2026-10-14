@@ -1,6 +1,7 @@
 issueTrackerURL="https://github.com/cassiancc/Effects-Are-Effects/issues"
 displayURL="https://modrinth.com/project/effects-are-effects/"
 logoFile= "assets/effects_are_effects/icon.png"
+iconFile= "assets/effects_are_effects/icon.png"
 license="${mod_license}"
 modLoader = "javafml"
 loaderVersion = "[4,)"

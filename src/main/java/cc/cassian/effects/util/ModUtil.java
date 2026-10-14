@@ -1,36 +1,34 @@
 package cc.cassian.effects.util;
 
-
+//? fabric {
+import cc.cassian.effects.EffectsAreEffects;
+import net.fabricmc.loader.api.FabricLoader;
+//?} else {
+/*import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLPaths;
+*///?}
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 //? if >26 {
 //~ if =26.1 'predicates'->'criterion' {
-import net.minecraft.advancements.predicates.EnchantmentPredicate;
-import net.minecraft.advancements.predicates.MinMaxBounds;
 //~}
-import net.minecraft.core.component.predicates.DataComponentPredicates;
-import net.minecraft.core.component.predicates.EnchantmentsPredicate;
+import net.minecraft.core.Registry;
 //?}
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 //? if =1.21.1 {
 /*import net.minecraft.advancements.criterion.EnchantmentPredicate;
 import net.minecraft.advancements.criterion.MinMaxBounds;
 *///?}
 //? if >26.1.2 {
-import net.minecraft.core.component.predicates.EnchantmentsPredicate;
-import net.minecraft.advancements.predicates.EnchantmentPredicate;
-import net.minecraft.advancements.predicates.MobEffectsPredicate;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potions;
 //?}
 //? if >=26.3 {
 import net.minecraft.world.level.storage.loot.predicates.LootPredicates;
- //?}
+//?}
 
-import java.util.List;
+import java.nio.file.Path;
 
 public class ModUtil {
 	//~ if >26.2 'LootItemCondition.Builder'->'Holder.Reference<LootItemCondition>'
@@ -65,5 +63,23 @@ public class ModUtil {
 								)
 				);
 		*///?}
+	}
+
+	public static Path getConfigDir() {
+		//? fabric
+		return FabricLoader.getInstance().getConfigDir();
+		//? neoforge
+		//return FMLPaths.CONFIGDIR.get();
+	}
+
+	public static boolean isModLoaded(String mod) {
+		//? fabric
+		return FabricLoader.getInstance().isModLoaded(mod);
+		//? neoforge
+		//return ModList.get().isLoaded(mod);
+	}
+
+	public static void addAlias(Registry<?> registry, String path) {
+		registry.addAlias(EffectsAreEffects.of(path), Identifier.withDefaultNamespace(path));
 	}
 }

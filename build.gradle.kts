@@ -11,8 +11,6 @@ val loader = sc.current.project.substringAfter('-')
 val fabric = loader == "fabric"
 val minecraft = stonecutter.current.version
 val mcVersion = stonecutter.current.project.substringBeforeLast('-')
-val supportsConnector = stonecutter.eval(mcVersion, "=1.21.1") || stonecutter.eval(mcVersion, "=1.20.1") || stonecutter.eval(mcVersion, "=26.1")
-val supportsLaunchpad = stonecutter.eval(mcVersion, "=26.1") || stonecutter.eval(mcVersion, "=26.2")
 val edgeRelease = !fabric
 val unobfuscated = stonecutter.eval(mcVersion, ">26")
 
@@ -176,15 +174,27 @@ dependencies {
 		forgeUserdev("net.neoforged:neoforge:${property("deps.neoforge")}:userdev")
 	}
 
-	if (hasProperty("deps.modmenu"))
-		modLocalRuntime("com.terraformersmc:modmenu:${property("deps.modmenu")}") {
-			exclude("net.fabricmc")
-		}
+	// Configs
+	implementation("folk.sisby:kaleido-config:${property("deps.kaleido")}")
+	include("folk.sisby:kaleido-config:${property("deps.kaleido")}")
 
-	if (hasProperty("deps.rrv"))
-		localRuntime("cc.cassian.rrv:reliable-recipe-viewer-${loader}:${property("deps.rrv")}") {
-			isTransitive = false
-		}
+	// McQoy
+	if (hasProperty("deps.mcqoy")) {
+		localRuntime("dev.isxander:yet-another-config-lib:${property("deps.yacl")}-${loader}")
+		localRuntime("maven.modrinth:mcqoy:${property("deps.mcqoy")}")
+	}
+
+	if (hasProperty("deps.modmenu")) {
+        modLocalRuntime("com.terraformersmc:modmenu:${property("deps.modmenu")}") {
+            exclude("net.fabricmc")
+        }
+    }
+
+	if (hasProperty("deps.rrv")) {
+        localRuntime("cc.cassian.rrv:reliable-recipe-viewer-${loader}:${property("deps.rrv")}") {
+            isTransitive = false
+        }
+    }
 
 	// Mixin Constraints - embedded
 //	implementation("com.moulberry:mixinconstraints:1.0.9")
@@ -284,10 +294,10 @@ publishMods {
 		minecraftVersions.addAll(additionalVersions)
 		if (fabric)
 			requires("fabric-api")
-		if (supportsConnector)
-			requires("connector")
-		if (supportsLaunchpad)
-			requires("launchpad")
+		optional("mcqoy")
+		if (hasProperty("deps.rrv")){
+			optional("rrv")
+		}
 		environment = CLIENT_AND_SERVER
 	}
 }

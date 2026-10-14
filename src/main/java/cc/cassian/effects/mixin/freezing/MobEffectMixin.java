@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(MobEffect.class)
 public class MobEffectMixin {
 	@WrapMethod(method = "onEffectAdded")
-	private void init(LivingEntity mob, int amplifier, Operation<Void> original) {
+	private void avoidSpammingFreezingSound(LivingEntity mob, int amplifier, Operation<Void> original) {
 		if ((MobEffect) (Object) this instanceof FreezingMobEffect && !mob.hasEffect(ModEffects.FREEZING)) {
 			original.call(mob, amplifier);
 		}

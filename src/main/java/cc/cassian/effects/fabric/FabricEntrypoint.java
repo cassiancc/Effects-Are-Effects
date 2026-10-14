@@ -67,10 +67,10 @@ public class FabricEntrypoint implements ModInitializer {
 		});
 		*///?}
 
-		/*
+
 		LootTableEvents.MODIFY.register((key, builder, source, provider) -> {
 			// If the loot table is for Ice, and it is not overridden by a user:
-			if (Blocks.ICE.getLootTable()
+			if (EffectsAreEffects.CONFIG.iceDropsIceBalls && Blocks.ICE.getLootTable()
 					//? if >26
 					.orElseThrow()
 					== key && source.isBuiltin()) {
@@ -85,8 +85,6 @@ public class FabricEntrypoint implements ModInitializer {
 				builder.withPool(pool);
 			}
 		});
-
-		 */
 	}
 }
 //?}

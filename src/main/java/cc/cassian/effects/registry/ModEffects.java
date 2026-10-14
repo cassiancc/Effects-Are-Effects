@@ -2,7 +2,8 @@ package cc.cassian.effects.registry;
 
 import cc.cassian.effects.EffectsAreEffects;
 //~ if >26.3 'cc.cassian.effects.effect'-> 'net.minecraft.world.effect'
-import cc.cassian.effects.effect.FreezingMobEffect;
+import cc.cassian.effects.util.ModUtil;
+import net.minecraft.world.effect.FreezingMobEffect;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,7 +23,8 @@ public class ModEffects {
 	*///?}
 
 	public static void init() {
-
+		//? if >26.3
+		//ModUtil.addAlias(BuiltInRegistries.MOB_EFFECT, "freezing");
 	}
 
 	private static class BurningEffect extends MobEffect {
