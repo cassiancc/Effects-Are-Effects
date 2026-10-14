@@ -13,7 +13,10 @@ public class ModItems {
 	public static final Item ICE_BALL = registerItem(ModItemIds.ICE_BALL, cc.cassian.effects.item.IceBallItem::new, new Item.Properties().stacksTo(16));
 
 	private static Item registerItem(final ResourceKey<Item> id, final Function<Item.Properties, Item> itemFactory, final Item.Properties properties) {
-		Item item = itemFactory.apply(properties.setId(id));
+		Item item = itemFactory.apply(properties
+				//? if >1.21.2
+				.setId(id)
+		);
 		return Registry.register(BuiltInRegistries.ITEM, id, item);
 	}
 

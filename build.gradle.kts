@@ -173,17 +173,19 @@ dependencies {
 		modImplementation("net.fabricmc.fabric-api:fabric-api:${property("deps.fabric_api")}")
 	}
 
-	modImplementation("com.terraformersmc:modmenu:${property("deps.modmenu")}") {
-		exclude("net.fabricmc")
-	}
+	if (hasProperty("deps.modmenu"))
+		modLocalRuntime("com.terraformersmc:modmenu:${property("deps.modmenu")}") {
+			exclude("net.fabricmc")
+		}
 
-	localRuntime("cc.cassian.rrv:reliable-recipe-viewer-${loader}:${property("deps.rrv")}") {
-		isTransitive = false
-	}
+	if (hasProperty("deps.rrv"))
+		localRuntime("cc.cassian.rrv:reliable-recipe-viewer-${loader}:${property("deps.rrv")}") {
+			isTransitive = false
+		}
 
 	// Mixin Constraints - embedded
-	implementation("com.moulberry:mixinconstraints:1.0.9")
-	include("com.moulberry:mixinconstraints:1.0.9")
+//	implementation("com.moulberry:mixinconstraints:1.0.9")
+//	include("com.moulberry:mixinconstraints:1.0.9")
 
 }
 
