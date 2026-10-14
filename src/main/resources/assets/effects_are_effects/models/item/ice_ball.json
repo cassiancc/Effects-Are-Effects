@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "effects_are_effects:item/ice_ball"
+  }
+}

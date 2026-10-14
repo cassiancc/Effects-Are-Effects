@@ -11,6 +11,10 @@ import net.minecraft.world.item.alchemy.Potion;
 public class ModPotions {
 	public static final Holder<Potion> BURNING = register(ModPotionIds.BURNING, new Potion("burning", new MobEffectInstance(ModEffects.BURNING, 900)));
 	public static final Holder<Potion> LONG_BURNING = register(ModPotionIds.LONG_BURNING, new Potion("burning", new MobEffectInstance(ModEffects.BURNING, 1800)));
+	public static final Holder<Potion> FREEZING = register(ModPotionIds.FREEZING, new Potion("freezing", new MobEffectInstance(ModEffects.FREEZING, 900)));
+	public static final Holder<Potion> LONG_FREEZING = register(
+			ModPotionIds.LONG_FREEZING, new Potion("freezing", new MobEffectInstance(ModEffects.FREEZING, 1800))
+	);
 
 	private static Holder<Potion> register(final ResourceKey<Potion> key, final Potion potion) {
 		return Registry.registerForHolder(BuiltInRegistries.POTION, key, potion);

@@ -1,5 +1,6 @@
 package cc.cassian.effects.mixin.freezing;
 
+import cc.cassian.effects.registry.ModEffects;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,7 +14,7 @@ public class EntityMixin {
 	@Inject(at = @At(value = "HEAD"), method = "clearFreeze")
 	private void init(CallbackInfo ci) {
 		if (((Entity) (Object) this) instanceof LivingEntity livingEntity) {
-			livingEntity.removeEffect(MobEffects.FREEZING);
+			livingEntity.removeEffect(ModEffects.FREEZING);
 		}
 	}
 }

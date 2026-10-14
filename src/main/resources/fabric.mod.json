@@ -21,6 +21,9 @@
 	"entrypoints": {
 		"main": [
 			"cc.cassian.effects.EffectsAreEffects"
+		],
+		"client": [
+			"cc.cassian.effects.client.EffectsAreEffectsClient"
 		]
 	},
 	"mixins": [

@@ -1,7 +1,6 @@
 package cc.cassian.effects;
 
-import cc.cassian.effects.registry.ModEffects;
-import cc.cassian.effects.registry.ModPotions;
+import cc.cassian.effects.registry.*;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.advancement.v1.AdvancementEvents;
@@ -19,15 +18,19 @@ public class EffectsAreEffects implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModEntityTypes.init();
+		ModItems.init();
 		ModEffects.init();
+		ModParticleTypes.init();
 		ModPotions.init();
+		ModSoundEvents.init();
 		AdvancementEvents.MODIFY.register((identifier, builder, advancementSource, provider) -> {
 			String name = "effects_are_effects";
 			if (identifier.getNamespace().equals("minecraft")) {
 				if (identifier.getPath().equals("nether/all_potions") || identifier.getPath().equals("nether/all_effects")) {
 					builder.addCriterion(name, EffectsChangedTrigger.TriggerInstance.hasEffects(
 									MobEffectsPredicate.Builder.effects()
-											.and(MobEffects.FREEZING)
+											.and(ModEffects.FREEZING)
 											.and(ModEffects.BURNING)
 							)
 					);

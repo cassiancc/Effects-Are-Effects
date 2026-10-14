@@ -7,6 +7,7 @@
     "burning.LivingEntityMixin",
     "freezing.EntityMixin",
     "freezing.InsideBlockEffectTypeMixin",
+    "freezing.LivingEntityMixin",
     "freezing.MobEffectMixin"
   ],
   "injectors": {
