@@ -1,3 +1,4 @@
+//? if <26.4 {
 package cc.cassian.effects.item;
 
 import cc.cassian.effects.entity.IceBall;
@@ -52,3 +53,4 @@ public class IceBallItem extends Item implements ProjectileItem {
 		return new IceBall(level, position.x(), position.y(), position.z(), itemStack);
 	}
 }
+//?}

@@ -220,6 +220,12 @@ tasks {
 		into(rootProject.layout.buildDirectory.file("libs/${project.property("mod.version")}"))
 		dependsOn("build")
 	}
+
+	if (stonecutter.eval(mcVersion, ">=26.4")) {
+		processResources {
+			exclude("**/freezing*", "**/ice_ball*")
+		}
+	}
 }
 
 java {

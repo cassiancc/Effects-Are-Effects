@@ -1,8 +1,4 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
+//? if <26.4 {
 package cc.cassian.effects.entity;
 
 import cc.cassian.effects.registry.ModEffects;
@@ -87,3 +83,4 @@ public class IceBall extends ThrowableItemProjectile {
 
 	}
 }
+//?}

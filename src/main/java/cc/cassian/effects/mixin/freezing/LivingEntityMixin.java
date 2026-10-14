@@ -17,10 +17,12 @@ public abstract class LivingEntityMixin extends Entity {
 		super(type, level);
 	}
 
+	//? if <26.4 {
 	@ModifyReturnValue(at = @At(value = "RETURN"), method = "canBeAffected")
 	private boolean preventFreezing(boolean original,final MobEffectInstance newEffect) {
 		if (this.is(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES))
 			return !newEffect.is(ModEffects.FREEZING);
 		return original;
 	}
+	//?}
 }

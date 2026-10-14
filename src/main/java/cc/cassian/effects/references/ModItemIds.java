@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 
 public class ModItemIds {
+	//? if <26.4
 	public static final ResourceKey<Item> ICE_BALL = register("ice_ball");
 
 	private static ResourceKey<Item> register(String path) {
