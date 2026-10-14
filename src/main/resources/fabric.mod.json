@@ -20,7 +20,8 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"cc.cassian.effects.EffectsAreEffects"
+			"cc.cassian.effects.EffectsAreEffects",
+			"cc.cassian.effects.fabric.FabricEntrypoint"
 		],
 		"client": [
 			"cc.cassian.effects.client.EffectsAreEffectsClient"
@@ -31,5 +32,8 @@
 	],
 	"depends": {
 		"fabric-api": "*"
+	},
+	"custom": {
+		"launchpad:compatible": true
 	}
 }

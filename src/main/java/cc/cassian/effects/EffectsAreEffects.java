@@ -2,13 +2,7 @@ package cc.cassian.effects;
 
 import cc.cassian.effects.registry.*;
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.advancement.v1.AdvancementEvents;
-import net.minecraft.advancements.predicates.MobEffectsPredicate;
-import net.minecraft.advancements.triggers.EffectsChangedTrigger;
 import net.minecraft.resources.Identifier;
-
-import net.minecraft.world.effect.MobEffects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,20 +18,6 @@ public class EffectsAreEffects implements ModInitializer {
 		ModParticleTypes.init();
 		ModPotions.init();
 		ModSoundEvents.init();
-		AdvancementEvents.MODIFY.register((identifier, builder, advancementSource, provider) -> {
-			String name = "effects_are_effects";
-			if (identifier.getNamespace().equals("minecraft")) {
-				if (identifier.getPath().equals("nether/all_potions") || identifier.getPath().equals("nether/all_effects")) {
-					builder.addCriterion(name, EffectsChangedTrigger.TriggerInstance.hasEffects(
-									MobEffectsPredicate.Builder.effects()
-											.and(ModEffects.FREEZING)
-											.and(ModEffects.BURNING)
-							)
-					);
-					builder.requireCriterion(name);
-				}
-			}
-		});
 	}
 
 	public static Identifier of(String path) {

@@ -26,6 +26,8 @@ stonecutter {
 				version("$version-$it", version).buildscript = "build.gradle.kts"
 			}
 
+		match("26.1", "fabric")
+		match("26.2", "fabric")
 		match("26.3", "fabric")
 		match("26.4", "fabric")
 

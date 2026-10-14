@@ -177,6 +177,10 @@ dependencies {
 		exclude("net.fabricmc")
 	}
 
+	localRuntime("cc.cassian.rrv:reliable-recipe-viewer-${loader}:${property("deps.rrv")}") {
+		isTransitive = false
+	}
+
 	// Mixin Constraints - embedded
 	implementation("com.moulberry:mixinconstraints:1.0.9")
 	include("com.moulberry:mixinconstraints:1.0.9")
@@ -226,6 +230,11 @@ tasks {
 			exclude("**/freezing*", "**/ice_ball*")
 		}
 	}
+	if (stonecutter.eval(mcVersion, "<26.3")) {
+		processResources {
+			exclude("**/recipe/brewing*")
+		}
+	}
 }
 
 java {
@@ -253,10 +262,10 @@ publishMods {
 	additionalFiles.from(loomx.modSourcesJar.map { it.archiveFile.get() })
 
 	// one of BETA, ALPHA, STABLE
-	if (edgeRelease) {
-		type = BETA
+	type = if (edgeRelease) {
+		BETA
 	} else {
-		type = STABLE
+		STABLE
 	}
 	displayName = "${property("mod.name")} ${property("mod.version")} for ${stonecutter.current.version}"
 	version = "${property("mod.version")}+${property("deps.minecraft")}-${loader}"
@@ -275,6 +284,5 @@ publishMods {
 		if (supportsLaunchpad)
 			requires("launchpad")
 		environment = CLIENT_AND_SERVER
-		optional("mcqoy")
 	}
 }
