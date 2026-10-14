@@ -1,7 +1,6 @@
 package cc.cassian.effects;
 
 import cc.cassian.effects.registry.*;
-import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
