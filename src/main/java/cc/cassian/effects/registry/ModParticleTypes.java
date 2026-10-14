@@ -1,6 +1,6 @@
 package cc.cassian.effects.registry;
 
-import cc.cassian.effects.EffectsAreEffects;
+import cc.cassian.effects.EmbersAndIcicles;
 //? fabric
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.core.Registry;
@@ -14,7 +14,7 @@ public class ModParticleTypes {
 
 	private static SimpleParticleType register(final String name, final boolean overrideLimiter) {
 		//~ if fabric 'new SimpleParticleType'-> 'FabricParticleTypes.simple'
-		return Registry.register(BuiltInRegistries.PARTICLE_TYPE, EffectsAreEffects.of(name), FabricParticleTypes.simple(overrideLimiter));
+		return Registry.register(BuiltInRegistries.PARTICLE_TYPE, EmbersAndIcicles.of(name), FabricParticleTypes.simple(overrideLimiter));
 	}
 	//?}
 

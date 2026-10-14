@@ -1,6 +1,6 @@
 package cc.cassian.effects.registry;
 
-import cc.cassian.effects.EffectsAreEffects;
+import cc.cassian.effects.EmbersAndIcicles;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
@@ -13,7 +13,7 @@ public class ModSoundEvents {
 	//?}
 
 	private static SoundEvent register(String s) {
-		return Registry.register(BuiltInRegistries.SOUND_EVENT, EffectsAreEffects.of(s), SoundEvent.createVariableRangeEvent(EffectsAreEffects.of(s)));
+		return Registry.register(BuiltInRegistries.SOUND_EVENT, EmbersAndIcicles.of(s), SoundEvent.createVariableRangeEvent(EmbersAndIcicles.of(s)));
 	}
 
 	public static void init() {

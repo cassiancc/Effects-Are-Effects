@@ -1,10 +1,9 @@
 //? fabric {
 package cc.cassian.effects.fabric;
 
-import cc.cassian.effects.EffectsAreEffects;
+import cc.cassian.effects.EmbersAndIcicles;
 import cc.cassian.effects.registry.ModEffects;
 import cc.cassian.effects.registry.ModItems;
-import cc.cassian.effects.registry.ModPotions;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -29,10 +28,10 @@ public class FabricEntrypoint implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
- 		EffectsAreEffects.onInitialize();
+ 		EmbersAndIcicles.onInitialize();
 		//? if >26.1.2 {
 		AdvancementEvents.MODIFY.register((identifier, builder, advancementSource, provider) -> {
-			String name = "effects_are_effects";
+			String name = "embers_and_icicles";
 			if (identifier.getNamespace().equals("minecraft")) {
 				if (identifier.getPath().equals("nether/all_potions") || identifier.getPath().equals("nether/all_effects")) {
 					builder.addCriterion(name, EffectsChangedTrigger.TriggerInstance.hasEffects(
@@ -70,7 +69,7 @@ public class FabricEntrypoint implements ModInitializer {
 
 		LootTableEvents.MODIFY.register((key, builder, source, provider) -> {
 			// If the loot table is for Ice, and it is not overridden by a user:
-			if (EffectsAreEffects.CONFIG.iceDropsIceBalls && Blocks.ICE.getLootTable()
+			if (EmbersAndIcicles.CONFIG.iceDropsIceBalls && Blocks.ICE.getLootTable()
 					//? if >26
 					.orElseThrow()
 					== key && source.isBuiltin()) {

@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "effects_are_effects",
+	"id": "embers_and_icicles",
 	"version": "${mod_version}",
 	"name": "${mod_name}",
 	"description": "${mod_description}",
@@ -11,12 +11,12 @@
 		"ProbablyEkho"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/project/effects-are-effects",
-		"sources": "https://github.com/cassiancc/Effects-Are-Effects",
-		"issues": "https://github.com/cassiancc/Effects-Are-Effects/issues"
+		"homepage": "https://modrinth.com/project/embers-and-icicles",
+		"sources": "https://github.com/cassiancc/embers-and-icicles",
+		"issues": "https://github.com/cassiancc/embers-and-icicles/issues"
 	},
 	"license": "${mod_license}",
-	"icon": "assets/effects_are_effects/icon.png",
+	"icon": "assets/embers_and_icicles/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -27,7 +27,7 @@
 		]
 	},
 	"mixins": [
-		"effects_are_effects.mixins.json"
+		"embers_and_icicles.mixins.json"
 	],
 	"depends": {
 		"fabric-api": "*"

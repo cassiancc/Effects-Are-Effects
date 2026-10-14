@@ -1,6 +1,6 @@
 package cc.cassian.effects.references;
 
-import cc.cassian.effects.EffectsAreEffects;
+import cc.cassian.effects.EmbersAndIcicles;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.alchemy.Potion;
@@ -14,6 +14,6 @@ public class ModPotionIds {
 	//?}
 
 	private static ResourceKey<Potion> register(final String name) {
-		return ResourceKey.create(Registries.POTION, EffectsAreEffects.of(name));
+		return ResourceKey.create(Registries.POTION, EmbersAndIcicles.of(name));
 	}
 }

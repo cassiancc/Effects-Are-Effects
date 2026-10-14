@@ -3,13 +3,13 @@
   "input": {
     "item": "minecraft:splash_potion",
     "potion_contents": {
-      "potions": "effects_are_effects:burning"
+      "potions": "embers_and_icicles:burning"
     }
   },
   "output": {
     "components": {
       "minecraft:potion_contents": {
-        "potion": "effects_are_effects:long_burning"
+        "potion": "embers_and_icicles:long_burning"
       }
     },
     "id": "minecraft:splash_potion"

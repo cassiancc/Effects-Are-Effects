@@ -15,6 +15,6 @@
     "id": "minecraft:potion"
   },
   "reagent": {
-    "item": "effects_are_effects:ice_ball"
+    "item": "embers_and_icicles:ice_ball"
   }
 }

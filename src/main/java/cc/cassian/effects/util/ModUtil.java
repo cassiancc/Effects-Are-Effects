@@ -1,7 +1,7 @@
 package cc.cassian.effects.util;
 
 //? fabric {
-import cc.cassian.effects.EffectsAreEffects;
+import cc.cassian.effects.EmbersAndIcicles;
 import net.fabricmc.loader.api.FabricLoader;
 //?} else {
 /*import net.neoforged.fml.ModList;
@@ -16,7 +16,6 @@ import net.minecraft.core.Registry;
 //?}
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 //? if =1.21.1 {
 /*import net.minecraft.advancements.criterion.EnchantmentPredicate;
@@ -80,6 +79,6 @@ public class ModUtil {
 	}
 
 	public static void addAlias(Registry<?> registry, String path) {
-		registry.addAlias(EffectsAreEffects.of(path), Identifier.withDefaultNamespace(path));
+		registry.addAlias(EmbersAndIcicles.of(path), Identifier.withDefaultNamespace(path));
 	}
 }

@@ -9,7 +9,7 @@
   "output": {
     "components": {
       "minecraft:potion_contents": {
-        "potion": "effects_are_effects:burning"
+        "potion": "embers_and_icicles:burning"
       }
     },
     "id": "minecraft:splash_potion"

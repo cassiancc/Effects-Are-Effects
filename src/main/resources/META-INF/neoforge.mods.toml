@@ -1,27 +1,27 @@
-issueTrackerURL="https://github.com/cassiancc/Effects-Are-Effects/issues"
-displayURL="https://modrinth.com/project/effects-are-effects/"
-logoFile= "assets/effects_are_effects/icon.png"
-iconFile= "assets/effects_are_effects/icon.png"
+issueTrackerURL="https://github.com/cassiancc/embers-and-icicles/issues"
+displayURL="https://modrinth.com/project/embers-and-icicles/"
+logoFile= "assets/embers_and_icicles/icon.png"
+iconFile= "assets/embers_and_icicles/icon.png"
 license="${mod_license}"
 modLoader = "javafml"
 loaderVersion = "[4,)"
 
 [[mods]]
-modId="effects_are_effects"
+modId="embers_and_icicles"
 version="${mod_version}"
 displayName="${mod_name}"
 description="${mod_description}"
 authors="cassiancc"
 credits="cassiancc, ProbablyEkho"
 
-[[dependencies.effects_are_effects]]
+[[dependencies.embers_and_icicles]]
 modId="neoforge"
 type="required"
 versionRange="[21, )"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.effects_are_effects]]
+[[dependencies.embers_and_icicles]]
 modId="minecraft"
 type="required"
 versionRange="[${minecraft}]"
@@ -29,4 +29,4 @@ ordering="NONE"
 side="BOTH"
 
 [[mixins]]
-config = "effects_are_effects.mixins.json"
+config = "embers_and_icicles.mixins.json"
