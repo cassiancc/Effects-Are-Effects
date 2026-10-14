@@ -6,6 +6,11 @@ import cc.cassian.effects.registry.ModEffects;
 import cc.cassian.effects.registry.ModItems;
 import cc.cassian.effects.registry.ModPotions;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.minecraft.world.level.block.Blocks;
 //? if =1.21.1 {
 /*import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 *///?}
@@ -13,12 +18,12 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.advancement.v1.AdvancementEvents;
 import net.minecraft.advancements.predicates.MobEffectsPredicate;
 import net.minecraft.advancements.triggers.EffectsChangedTrigger;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.alchemy.Potions;
 //?}
 //? if <26.3 && >26 {
 /*import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 *///?}
+
+import static cc.cassian.effects.util.ModUtil.silkTouch;
 
 public class FabricEntrypoint implements ModInitializer {
 	@Override
@@ -61,6 +66,27 @@ public class FabricEntrypoint implements ModInitializer {
 			);
 		});
 		*///?}
+
+		/*
+		LootTableEvents.MODIFY.register((key, builder, source, provider) -> {
+			// If the loot table is for Ice, and it is not overridden by a user:
+			if (Blocks.ICE.getLootTable()
+					//? if >26
+					.orElseThrow()
+					== key && source.isBuiltin()) {
+				// Create a new loot pool that will hold the diamonds.
+				LootPool.Builder pool = LootPool.lootPool()
+						// Add diamonds...
+						.add(LootItem.lootTableItem(ModItems.ICE_BALL))
+						// ...only if the block would not be dropped.
+						.when(InvertedLootItemCondition.invert(silkTouch(provider)));
+
+				// Add the loot pool to the loot table
+				builder.withPool(pool);
+			}
+		});
+
+		 */
 	}
 }
 //?}
