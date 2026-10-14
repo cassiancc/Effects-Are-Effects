@@ -1,25 +1,67 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
-	id("net.fabricmc.fabric-loom")
-	`maven-publish`
-	id("me.modmuss50.mod-publish-plugin") version "2.2.1"
-	id("co.uzzu.dotenv.gradle") version "4.0.0"
+	id("dev.kikugie.loom-back-compat")
+	id("dev.kikugie.postprocess.jsonlang")
+	id("me.modmuss50.mod-publish-plugin")
+	id("maven-publish")
+}
+
+val loader = sc.current.project.substringAfter('-')
+val fabric = loader == "fabric"
+val minecraft = stonecutter.current.version
+val mcVersion = stonecutter.current.project.substringBeforeLast('-')
+val supportsConnector = stonecutter.eval(mcVersion, "=1.21.1") || stonecutter.eval(mcVersion, "=1.20.1") || stonecutter.eval(mcVersion, "=26.1")
+val supportsLaunchpad = stonecutter.eval(mcVersion, "=26.1") || stonecutter.eval(mcVersion, "=26.2")
+val edgeRelease = !fabric
+val unobfuscated = stonecutter.eval(mcVersion, ">26")
+
+tasks.named<ProcessResources>("processResources") {
+	fun prop(name: String) = project.property(name) as String
+
+	val props = HashMap<String, String>().apply {
+		this["mod_version"] = prop("mod.version") + "+" + prop("deps.minecraft")
+		this["minecraft"] = prop("deps.minecraft")
+		this["mod_name"] = prop("mod.name")
+		this["mod_description"] = prop("mod.description")
+	}
+
+	filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml", "META-INF/mods.toml")) {
+		expand(props)
+	}
 
 }
 
-version = "${property("mod_version")}+${property("minecraft_version")}"
-group = providers.gradleProperty("maven_group").get()
+tasks.named("processResources") {
+	dependsOn(":${stonecutter.current.project}:stonecutterGenerate")
+}
+
+version = "${property("mod.version")}+${property("deps.minecraft")}-${loader}"
+base.archivesName = property("mod.id") as String
+
+//loom {
+//    accessWidenerPath = rootProject.file("src/main/resources/${property("mod.id")}.accesswidener")
+//}
+
+jsonlang {
+	languageDirectories = listOf("assets/${property("mod.id")}/lang")
+	prettyPrint = true
+}
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	maven {
+		name = "shedaniel (Cloth Config)"
+		url = uri("https://maven.shedaniel.me/")
+		content {
+			includeGroupAndSubgroups("me.shedaniel")
+		}
+	}
 	maven {
 		name = "Terraformers (Mod Menu)"
 		url = uri("https://maven.terraformersmc.com/releases/")
 		content {
 			includeGroupAndSubgroups("com.terraformersmc")
+			includeGroup("dev.emi")
 		}
 	}
 	maven {
@@ -37,6 +79,13 @@ repositories {
 		}
 	}
 	maven {
+		name = "Parchment Mappings"
+		url = uri("https://maven.parchmentmc.org")
+		content {
+			includeGroupAndSubgroups("org.parchmentmc")
+		}
+	}
+	maven {
 		name = "Xander Maven"
 		url = uri("https://maven.isxander.dev/releases")
 		content {
@@ -45,140 +94,181 @@ repositories {
 		}
 	}
 	maven {
+		name = "Fuzs Mod Resources"
+		url = uri("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/")
+		content {
+			includeGroupAndSubgroups("fuzs")
+		}
+	}
+	maven {
+		name = "FzzyMaven"
+		url = uri("https://maven.fzzyhmstrs.me/")
+		content {
+			includeGroup("me.fzzyhmstrs")
+		}
+	}
+	maven {
+		name = "Cardinal Components"
+		url = uri("https://maven.ladysnake.org/releases")
+		content {
+			includeGroupAndSubgroups("dev.onyxstudios")
+			includeGroupAndSubgroups("org.ladysnake")
+		}
+	}
+	exclusiveContent {
+		forRepository {
+			maven {
+				url = uri("https://cursemaven.com")
+			}
+		}
+		filter {
+			includeGroup ("curse.maven")
+		}
+	}
+	maven {
+		name = "Gegy"
+		url = uri("https://maven.gegy.dev/releases/")
+		content {
+			includeGroupAndSubgroups("dev.lambdaurora")
+		}
+	}
+	maven {
+		name = "Nucleoid Maven (Trinkets)"
+		url = uri("https://maven.nucleoid.xyz")
+		content {
+			includeGroupAndSubgroups("eu.pb4")
+			includeGroupAndSubgroups("xyz.nucleoid")
+		}
+	}
+	maven {
+		name = "Sinytra"
+		url = uri("https://maven.sinytra.org")
+		content {
+			includeGroupAndSubgroups("org.sinytra")
+		}
+	}
+	maven {
 		name = "Cassian's Maven"
 		url = uri("https://maven.cassian.cc")
 		content {
 			includeGroupAndSubgroups("cc.cassian")
+			includeGroupAndSubgroups("folk.sisby")
 		}
 	}
-	maven {
-		name = "NeoForge"
-		url = uri("https://maven.neoforged.net/releases/")
-		content {
-			includeGroupAndSubgroups("net.neoforged")
-			includeGroupAndSubgroups("cpw.mods")
-			includeGroupAndSubgroups("net.minecraftforge")
-		}
-	}
+	mavenLocal()
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
-	minecraft("com.mojang:minecraft:${providers.gradleProperty("minecraft_version").get()}")
-
-	implementation("net.fabricmc:fabric-loader:${providers.gradleProperty("loader_version").get()}")
-
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	implementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
-
-	// Mod Menu
-	localRuntime("maven.modrinth:modmenu:${property("modmenu_version")}")
-
-	// Configs
-//	implementation("folk.sisby:kaleido-config:${property("kaleido_version")}")
-//	include("folk.sisby:kaleido-config:${property("kaleido_version")}")
-
-	// McQoy
-//	implementation("dev.isxander:yet-another-config-lib:${property("yacl_version")}")
-//	implementation("maven.modrinth:mcqoy:${property("mcqoy_version")}")
-
-	// RRV
-//	compileOnly("cc.cassian.rrv:reliable-recipe-viewer-fabric:${property("rrv_version")}") {
-//		isTransitive = false
-//	}
-	localRuntime("cc.cassian.rrv:reliable-recipe-viewer-fabric:${property("rrv_version")}") {
-		isTransitive = false
+	minecraft("com.mojang:minecraft:${property("deps.minecraft")}")
+	if (!unobfuscated) {
+		mappings(loom.layered {
+			officialMojangMappings()
+			parchment("org.parchmentmc.data:parchment-${property("deps.parchment")}@zip")
+			mappings("dev.lambdaurora:yalmm-mojbackward:${property("deps.minecraft")}+build.${property("deps.mojbackward")}")
+		})
+		implementation("org.jspecify:jspecify:1.0.0")
 	}
+	if (fabric) {
+		modImplementation("net.fabricmc:fabric-loader:${property("deps.fabric_loader")}")
+		modImplementation("net.fabricmc.fabric-api:fabric-api:${property("deps.fabric_api")}")
+	}
+
+	modImplementation("com.terraformersmc:modmenu:${property("deps.modmenu")}") {
+		exclude("net.fabricmc")
+	}
+
+	// Mixin Constraints - embedded
+	implementation("com.moulberry:mixinconstraints:1.0.9")
+	include("com.moulberry:mixinconstraints:1.0.9")
 
 }
 
-tasks.processResources {
-	fun prop(name: String) = project.property(name) as String
-
-	val props = HashMap<String, String>().apply {
-		this["mod_version"] = prop("mod_version") + "+" + prop("minecraft_version")
-		this["mod_name"] = prop("mod_name")
-		this["mod_license"] = prop("mod_license")
-		this["mod_id"] = prop("mod_id")
-		this["mod_description"] = prop("mod_description")
-
-	}
-
-	filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml")) {
-		expand(props)
+configurations.all {
+	resolutionStrategy {
+		force("net.fabricmc:fabric-loader:${property("deps.fabric_loader")}")
 	}
 }
 
-tasks.withType<JavaCompile>().configureEach {
-	options.release = 25
+stonecutter {
+	replacements.string {
+		direction = eval(current.version, ">26")
+		replace("GuiGraphics", "GuiGraphicsExtractor")
+	}
+	replacements.string {
+		direction = eval(current.version, ">26")
+		replace("guiGraphics.drawString", "guiGraphics.text")
+	}
+	replacements.string {
+		direction = eval(current.version, ">26")
+		replace("guiGraphics.renderFakeItem", "guiGraphics.fakeItem")
+	}
+	replacements.string {
+		direction = eval(current.version, ">1.21.2")
+		replace("pushPose", "pushMatrix")
+	}
+	replacements.string {
+		direction = eval(current.version, ">1.21.2")
+		replace("popPose", "popMatrix")
+	}
+}
+
+tasks {
+
+	register<Copy>("buildAndCollect") {
+		group = "build"
+		from(loomx.modJar.map { it.archiveFile })
+		into(rootProject.layout.buildDirectory.file("libs/${project.property("mod.version")}"))
+		dependsOn("build")
+	}
 }
 
 java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
 	withSourcesJar()
-
-	sourceCompatibility = JavaVersion.VERSION_25
-	targetCompatibility = JavaVersion.VERSION_25
+	val javaCompat = if (stonecutter.eval(stonecutter.current.version, ">=26")) {
+		JavaVersion.VERSION_25
+	} else if (stonecutter.eval(stonecutter.current.version, ">=1.21")) {
+		JavaVersion.VERSION_21
+	} else {
+		JavaVersion.VERSION_17
+	}
+	sourceCompatibility = javaCompat
+	targetCompatibility = javaCompat
 }
 
-tasks.jar {
-	val projectName = project.name
-	inputs.property("projectName", projectName)
-
-	from("LICENSE") {
-		rename { "${it}_${project.name}" }
-	}
-}
-
-// configure the maven publication
-publishing {
-	publications {
-		register<MavenPublication>("mavenJava") {
-			from(components["java"])
-		}
-	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
-	}
-}
+val additionalVersionsStr = findProperty("publish.additionalVersions") as String?
+val additionalVersions: List<String> = additionalVersionsStr
+	?.split(",")
+	?.map { it.trim() }
+	?.filter { it.isNotEmpty() }
+	?: emptyList()
 
 publishMods {
-	file = tasks.jar.map { it.archiveFile.get() }
-	// one of BETA, ALPHA, STABLE
-	type = STABLE
-	displayName = "${property("mod_name")} ${property("mod_version")} for ${property("minecraft_version")} Fabric"
-	version = "${property("mod_version")}+${property("minecraft_version")}"
-	changelog = provider { rootProject.file("CHANGELOG-LATEST.md").readText() }
-	modLoaders.add("fabric")
+	file = loomx.modJar.map { it.archiveFile.get() }
+	additionalFiles.from(loomx.modSourcesJar.map { it.archiveFile.get() })
 
+	// one of BETA, ALPHA, STABLE
+	if (edgeRelease) {
+		type = BETA
+	} else {
+		type = STABLE
+	}
+	displayName = "${property("mod.name")} ${property("mod.version")} for ${stonecutter.current.version}"
+	version = "${property("mod.version")}+${property("deps.minecraft")}-${loader}"
+	changelog = provider { rootProject.file("CHANGELOG-LATEST.md").readText() }
+	modLoaders.add(loader)
 
 	modrinth {
-		additionalFile(tasks.named<org.gradle.jvm.tasks.Jar>("sourcesJar")) {
-			type.set(SOURCES_JAR)
-		}
-		projectId = property("modrinth_id") as String
+		projectId = property("publish.modrinth") as String
 		accessToken = env.MODRINTH_API_KEY.orNull()
-		minecraftVersions.add(property("minecraft_version").toString())
-		requires("fabric-api")
+		minecraftVersions.add(property("deps.minecraft") as String)
+		minecraftVersions.addAll(additionalVersions)
+		if (fabric)
+			requires("fabric-api")
+		if (supportsConnector)
+			requires("connector")
+		if (supportsLaunchpad)
+			requires("launchpad")
 		environment = CLIENT_AND_SERVER
+		optional("mcqoy")
 	}
-
-	/*
-    curseforge {
-        projectId = property("publish.curseforge") as String
-        accessToken = env.CURSEFORGE_API_KEY.orNull()
-        minecraftVersions.add(property("minecraft_version").toString())
-        requires("fabric-api")
-        optional("mcqoy")
-        optional("rrv")
-    }
-
-     */
 }

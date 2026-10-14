@@ -1,18 +1,34 @@
 pluginManagement {
 	repositories {
-		maven {
-			name = "Fabric"
-			url = uri("https://maven.fabricmc.net/")
-		}
+		mavenLocal()
 		mavenCentral()
 		gradlePluginPortal()
-	}
-
-	plugins {
-		id("net.fabricmc.fabric-loom") version providers.gradleProperty("loom_version")
-		id("co.uzzu.dotenv.gradle") version "4.0.0"
+		maven("https://maven.fabricmc.net/") { name = "Fabric" }
+		maven("https://maven.neoforged.net/releases/") { name = "NeoForged" }
+		maven("https://maven.kikugie.dev/snapshots") { name = "KikuGie" }
+		maven("https://maven.kikugie.dev/releases") { name = "KikuGie Releases" }
+		maven("https://maven.parchmentmc.org") { name = "ParchmentMC" }
+		maven("https://maven.su5ed.dev/releases" ) {name = "Sinytra"}
+		maven("https://repo.codemc.io/repository/relativitymc/") { name = "RelativityMC" }
 	}
 }
 
-// Should match your modid
-rootProject.name = "effects-are-effects"
+plugins {
+	id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+	id("dev.kikugie.stonecutter") version "0.9.6"
+	id("dev.kikugie.loom-back-compat") version "0.4"
+}
+
+stonecutter {
+	create(rootProject) {
+		fun match(version: String, vararg loaders: String) = loaders
+			.forEach {
+				version("$version-$it", version).buildscript = "build.gradle.kts"
+			}
+
+		match("26.3", "fabric")
+		match("26.4", "fabric")
+
+		vcsVersion = "26.3-fabric"
+	}
+}
