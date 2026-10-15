@@ -22,6 +22,7 @@ public class EmbersAndIcicles {
 		ModItems.init();
 		ModEffects.init();
 		ModPotions.init();
+		ModFeatures.init();
 		ModAttachments.init();
 		//? if <26.4
 		FrozenCaves.setup();
