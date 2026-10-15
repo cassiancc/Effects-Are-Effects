@@ -46,6 +46,8 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.level.levelgen.Heightmap;
 //?}
+//? if <26
+//import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 
 
 import static cc.cassian.effects.util.ModUtil.silkTouch;
@@ -145,6 +147,9 @@ public class FabricEntrypoint implements ModInitializer {
 				event.insertAfter(insertion.after(), insertion.item());
 			});
 		}
+
+		//? if <26
+		//TradeOfferHelper.registerWanderingTraderOffers(1, factories -> factories.addAll(FrozenCaves.wanderingTraderTrades()));
 	}
 	//?}
 }

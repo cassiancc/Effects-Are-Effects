@@ -20,6 +20,12 @@ import net.minecraft.world.level.block.SoundType;
 
 import java.util.List;
 import java.util.Map;
+//? if <26 {
+/*import net.minecraft.world.entity.npc.villager.VillagerTrades;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
+*///?}
 
 public final class FrozenCaves {
 	public static final Map<ResourceKey<Biome>, Integer> FROSTBITE_SPAWNS = Map.of(
@@ -45,6 +51,19 @@ public final class FrozenCaves {
 				new TabInsertion(CreativeModeTabs.SPAWN_EGGS, Items.DROWNED_SPAWN_EGG, ModItems.FROSTBITE_SPAWN_EGG)
 		);
 	}
+
+	//? if <26 {
+	/*public static List<VillagerTrades.ItemListing> wanderingTraderTrades() {
+		return List.of(
+				(trader, random) -> offer(2, new ItemStack(ModItems.ICE_CRYSTAL)),
+				(trader, random) -> offer(1, new ItemStack(ModItems.ICICLE, 2))
+		);
+	}
+
+	private static MerchantOffer offer(final int emeralds, final ItemStack result) {
+		return new MerchantOffer(new ItemCost(Items.EMERALD, emeralds), result, 5, 1, 0.05F);
+	}
+	*///?}
 
 	public static void setup() {
 		if (EmbersAndIcicles.CONFIG.newIceSounds) {

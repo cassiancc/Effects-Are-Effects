@@ -26,6 +26,9 @@ import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 //? if <26.3 {
 /^import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 ^///?}
+//? if <26 {
+/^import net.neoforged.neoforge.event.village.WandererTradesEvent;
+^///?}
 
 @EventBusSubscriber
 public class NeoForgeEntrypoint {
@@ -82,6 +85,13 @@ public class NeoForgeEntrypoint {
 			event.accept(stack);
 		}
 	}
+
+	//? if <26 {
+	/^@SubscribeEvent
+	public static void addWanderingTrades(WandererTradesEvent event) {
+		event.getGenericTrades().addAll(FrozenCaves.wanderingTraderTrades());
+	}
+	^///?}
 	//?}
 }
 *///?}
