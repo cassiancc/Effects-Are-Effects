@@ -13,6 +13,7 @@ public class ModTags {
 	public static final TagKey<Block> MELTS_ICICLE_ABOVE = block("melts_icicle_above");
 
 	public static final TagKey<Item> FROSTBITE_PREFERRED_WEAPONS = item("frostbite_preferred_weapons");
+	public static final TagKey<Item> KNOCKS_BACK_PLAYERS_EVEN_WITH_ZERO_DAMAGE = item("knocks_back_players_even_with_zero_damage");
 
 	public static final TagKey<EntityType<?>> DOES_NOT_BREAK_BRITTLE_ICE = entity("does_not_break_brittle_ice");
 

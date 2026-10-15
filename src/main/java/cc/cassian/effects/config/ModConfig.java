@@ -14,6 +14,8 @@ public class ModConfig extends WrappedConfig {
 	public boolean freezingConversions = true;
 	@Comment("Whether Ice, Packed Ice, Blue Ice and Frosted Ice use their 26.4 sounds")
 	public boolean newIceSounds = true;
+	@Comment("Whether Snowballs knock back players")
+	public boolean snowballKnockback = true;
 	@Comment("Whether Water next to Blue Ice freezes into Brittle Ice")
 	public boolean blueIceMakesBrittleIce = true;
 	@Comment("Whether Mushrooms can be placed on any solid block regardless of light level")
