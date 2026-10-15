@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ice": {
+    "has_ice_ball": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:ice"
+            "items": "minecraft:ice_ball"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "embers_and_icicles:ice_ball"
+        "recipes": "embers_and_icicles:ice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ice"
+      "has_ice_ball"
     ]
   ],
   "rewards": {
     "recipes": [
-      "embers_and_icicles:ice_ball"
+      "embers_and_icicles:ice"
     ]
   }
 }

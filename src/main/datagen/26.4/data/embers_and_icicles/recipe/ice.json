@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "#": "minecraft:ice"
+    "#": "minecraft:ice_ball"
   },
   "pattern": [
     "##",
     "##"
   ],
   "result": {
-    "id": "embers_and_icicles:ice_ball"
+    "id": "minecraft:ice"
   }
 }

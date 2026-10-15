@@ -49,6 +49,7 @@ val backportResources = when {
 }
 sourceSets.main {
 	backportResources.forEach { resources.srcDir(rootProject.file("src/main/backport/$it")) }
+	resources.srcDir(rootProject.file("src/main/datagen/${minecraft}"))
 }
 
 version = "${property("mod.version")}+${property("deps.minecraft")}-${loader}"
@@ -265,14 +266,10 @@ stonecutter {
 	}
 }
 
-if (!fabric) {
-	tasks.register<Sync>("syncDatagen") {
-		from(project(":${minecraft}-fabric").tasks.named("runDatagen"))
-		into(file("src/main/generated/"))
-	}
-} else {
+if (fabric) {
 	fabricApi {
 		configureDataGeneration() {
+			outputDirectory = file("$rootDir/src/main/datagen/$minecraft")
 			client = true
 			modId = "embers_and_icicles"
 		}
