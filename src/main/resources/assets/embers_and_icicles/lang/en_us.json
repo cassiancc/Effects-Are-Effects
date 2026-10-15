@@ -13,6 +13,7 @@
   "subtitles.event.mob_effect.freezing": "Starting to freeze",
   "entity.embers_and_icicles.ice_ball": "Ice Ball",
   "item.embers_and_icicles.ice_ball": "Ice Ball",
+  "item.embers_and_icicles.ice_cube": "Ice Cube",
   "subtitles.entity.ice_ball.break": "Ice Ball hits",
   "subtitles.entity.ice_ball.throw": "Ice Ball flies"
 }

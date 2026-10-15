@@ -4,7 +4,10 @@
 
 ## Features
 
-26.4 introduced the new **Freezing** effect, but its only use is on the new Ice Balls. This mod makes the Freezing effect also be applied by Powder Snow, and additionally adds a status effect for **Burning**, so players have an indicator on how long they will burn for.
+- The **Freezing** effect introduced in 26.4 is now applied by Powder Snow.
+- A status effect for **Burning**, so players have an indicator on how long they will burn for.
+- On versions below 26.4, the Freezing effect and Ice Balls are backported.
+- By default, Ice Balls are now dropped when mining Ice without Silk Touch.
 
 ## Installation
 

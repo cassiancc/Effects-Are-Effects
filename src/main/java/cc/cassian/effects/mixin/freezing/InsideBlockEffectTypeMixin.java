@@ -19,7 +19,7 @@ public class InsideBlockEffectTypeMixin {
 	private static void addFreezing(Entity instance, int numberOfTicks, Operation<Void> original) {
 	//?} else {
 	/*@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V", ordinal = 0), method = "aiStep")
-	private static void addFreezing(LivingEntity instance, int i, Operation<Void> original) {
+	private static void addFreezing(LivingEntity instance, int numberOfTicks, Operation<Void> original) {
 	*///?}
 		if (instance instanceof LivingEntity livingEntity) {
 			livingEntity.addEffect(new MobEffectInstance(ModEffects.FREEZING, numberOfTicks, 0, true, true));

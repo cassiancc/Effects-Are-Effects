@@ -231,6 +231,20 @@ stonecutter {
 	}
 }
 
+if (!fabric) {
+	tasks.register<Sync>("syncDatagen") {
+		from(project(":${minecraft}-fabric").tasks.named("runDatagen"))
+		into(file("src/main/generated/"))
+	}
+} else {
+	fabricApi {
+		configureDataGeneration() {
+			client = true
+			modId = "embers_and_icicles"
+		}
+	}
+}
+
 tasks {
 
 	register<Copy>("buildAndCollect") {

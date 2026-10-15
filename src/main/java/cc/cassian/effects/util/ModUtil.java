@@ -7,19 +7,27 @@ import net.fabricmc.loader.api.FabricLoader;
 /*import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLPaths;
 *///?}
+import net.minecraft.advancements.criterion.EnchantmentPredicate;
+import net.minecraft.advancements.criterion.MinMaxBounds;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 //? if >26 {
 //~ if =26.1 'predicates'->'criterion' {
+import net.minecraft.core.component.predicates.DataComponentPredicates;
+import net.minecraft.core.component.predicates.EnchantmentsPredicate;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 //~}
-import net.minecraft.core.Registry;
 //?}
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+
 //? if =1.21.1 {
 /*import net.minecraft.advancements.criterion.EnchantmentPredicate;
 import net.minecraft.advancements.criterion.MinMaxBounds;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 *///?}
 //? if >26.1.2 {
 //?}
@@ -28,6 +36,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootPredicates;
 //?}
 
 import java.nio.file.Path;
+import java.util.List;
 
 public class ModUtil {
 	//~ if >26.2 'LootItemCondition.Builder'->'Holder.Reference<LootItemCondition>'

@@ -22,7 +22,7 @@ import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.level.Level;
 
 public class IceBallItem extends Item implements ProjectileItem {
-	public static final float PROJECTILE_SHOOT_POWER = 1.5F;
+	public static final float PROJECTILE_SHOOT_POWER = 1F;
 
 	public IceBallItem(final Properties properties) {
 		super(properties);
