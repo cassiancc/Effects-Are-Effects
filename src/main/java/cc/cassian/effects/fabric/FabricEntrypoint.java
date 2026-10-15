@@ -36,6 +36,15 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 //? if <26.4 {
 import cc.cassian.effects.backport.FrozenCaves;
+import cc.cassian.effects.entity.Frostbite;
+import cc.cassian.effects.mixin.backport.SpawnPlacementsInvoker;
+import cc.cassian.effects.registry.ModEntityTypes;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.level.levelgen.Heightmap;
 //?}
 
 
@@ -123,6 +132,12 @@ public class FabricEntrypoint implements ModInitializer {
 
 	//? if <26.4 {
 	private static void registerFrozenCaves() {
+		FabricDefaultAttributeRegistry.register(ModEntityTypes.FROSTBITE, Frostbite.createAttributes());
+		SpawnPlacementsInvoker.embers$register(ModEntityTypes.FROSTBITE, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				ModEntityTypes::checkFrostbiteSpawnRules);
+		FrozenCaves.FROSTBITE_SPAWNS.forEach((biome, weight) ->
+				BiomeModifications.addSpawn(BiomeSelectors.includeByKey(biome), MobCategory.MONSTER, ModEntityTypes.FROSTBITE, weight, 4, 4));
+
 		for (FrozenCaves.TabInsertion insertion : FrozenCaves.tabInsertions()) {
 			//~ if <26 'CreativeModeTabEvents.modifyOutputEvent'->'ItemGroupEvents.modifyEntriesEvent'
 			CreativeModeTabEvents.modifyOutputEvent(insertion.tab()).register(event -> {

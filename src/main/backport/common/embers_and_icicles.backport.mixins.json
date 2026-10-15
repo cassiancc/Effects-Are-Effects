@@ -7,7 +7,8 @@
     "FrostedIceBlockMixin",
     "LiquidBlockMixin",
     "MushroomBlockMixin",
-    "SnowLayerBlockMixin"
+    "SnowLayerBlockMixin",
+    "SpawnPlacementsInvoker"
   ],
   "client": [],
   "injectors": {

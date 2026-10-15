@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.Function;
@@ -20,11 +21,19 @@ public class ModItems {
 	public static final Item BRITTLE_ICE = registerBlock(ModItemIds.BRITTLE_ICE, ModBlocks.BRITTLE_ICE);
 	public static final Item ICE_CRYSTAL = registerBlock(ModItemIds.ICE_CRYSTAL, ModBlocks.ICE_CRYSTAL);
 	public static final Item ICICLE = registerBlock(ModItemIds.ICICLE, ModBlocks.ICICLE);
+	//? if >=26 {
+	public static final Item FROSTBITE_SPAWN_EGG = registerItem(ModItemIds.FROSTBITE_SPAWN_EGG, SpawnEggItem::new,
+			new Item.Properties().spawnEgg(ModEntityTypes.FROSTBITE));
+	//?} else {
+	/*public static final Item FROSTBITE_SPAWN_EGG = registerItem(ModItemIds.FROSTBITE_SPAWN_EGG,
+			properties -> new SpawnEggItem(ModEntityTypes.FROSTBITE, 0xFFFFFF, 0xFFFFFF, properties), new Item.Properties());
+	*///?}
 	//?} else {
 	/*public static final Item ICE_BALL = Items.ICE_BALL;
 	public static final Item BRITTLE_ICE = Items.BRITTLE_ICE;
 	public static final Item ICE_CRYSTAL = Items.ICE_CRYSTAL;
 	public static final Item ICICLE = Items.ICICLE;
+	public static final Item FROSTBITE_SPAWN_EGG = Items.FROSTBITE_SPAWN_EGG;
 	*///?}
 
 	private static Item registerItem(final ResourceKey<Item> id, final Function<Item.Properties, Item> itemFactory, final Item.Properties properties) {
@@ -48,6 +57,7 @@ public class ModItems {
 		ModUtil.addAlias(BuiltInRegistries.ITEM, "brittle_ice");
 		ModUtil.addAlias(BuiltInRegistries.ITEM, "ice_crystal");
 		ModUtil.addAlias(BuiltInRegistries.ITEM, "icicle");
+		ModUtil.addAlias(BuiltInRegistries.ITEM, "frostbite_spawn_egg");
 		*///?}
 	}
 }

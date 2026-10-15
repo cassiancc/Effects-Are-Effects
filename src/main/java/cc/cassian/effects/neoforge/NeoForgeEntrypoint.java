@@ -10,12 +10,18 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.RegisterEvent;
 //? if <26.4 {
 import cc.cassian.effects.backport.FrozenCaves;
+import cc.cassian.effects.entity.Frostbite;
+import cc.cassian.effects.registry.ModEntityTypes;
+import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 //?}
 //? if <26.3 {
 /^import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
@@ -43,6 +49,17 @@ public class NeoForgeEntrypoint {
 	^///?}
 
 	//? if <26.4 {
+	@SubscribeEvent
+	public static void createAttributes(EntityAttributeCreationEvent event) {
+		event.put(ModEntityTypes.FROSTBITE, Frostbite.createAttributes().build());
+	}
+
+	@SubscribeEvent
+	public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+		event.register(ModEntityTypes.FROSTBITE, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				ModEntityTypes::checkFrostbiteSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+	}
+
 	@SubscribeEvent
 	public static void addToCreativeTabs(BuildCreativeModeTabContentsEvent event) {
 		if (event.getTabKey() == CreativeModeTabs.COMBAT) {
