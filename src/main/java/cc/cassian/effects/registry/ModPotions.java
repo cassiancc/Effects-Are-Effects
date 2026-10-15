@@ -24,6 +24,9 @@ public class ModPotions {
 	}
 
 	public static void init() {
-		ModUtil.addAlias(BuiltInRegistries.POTION, "ice_ball");
+		//? if >26.3 {
+		/*ModUtil.addAlias(BuiltInRegistries.POTION, "freezing");
+		ModUtil.addAlias(BuiltInRegistries.POTION, "long_freezing");
+		*///?}
 	}
 }
