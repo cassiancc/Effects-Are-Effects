@@ -21,4 +21,8 @@ public class ModConfig extends WrappedConfig {
 	@Comment("Whether Mushrooms can be placed on any solid block regardless of light level")
 	public boolean mushroomPlacement = true;
 	//?}
+	//? if <26 {
+	/*@Comment("Whether the Frostbite Spawn Egg uses the old two-tone style instead of its 26.4 texture")
+	public boolean legacySpawnEgg = true;
+	*///?}
 }

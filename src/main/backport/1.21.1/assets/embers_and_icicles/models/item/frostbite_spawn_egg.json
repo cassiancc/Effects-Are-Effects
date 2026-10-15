@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "embers_and_icicles:item/frostbite_spawn_egg"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "embers_and_icicles:legacy_spawn_egg": 1
+      },
+      "model": "embers_and_icicles:item/frostbite_spawn_egg_legacy"
+    }
+  ]
+}

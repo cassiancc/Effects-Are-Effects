@@ -1,5 +1,7 @@
 package cc.cassian.effects.registry;
 
+//? if <26
+//import cc.cassian.effects.EmbersAndIcicles;
 //? if <26.4
 import cc.cassian.effects.item.IceBallItem;
 import cc.cassian.effects.references.ModItemIds;
@@ -25,8 +27,10 @@ public class ModItems {
 	public static final Item FROSTBITE_SPAWN_EGG = registerItem(ModItemIds.FROSTBITE_SPAWN_EGG, SpawnEggItem::new,
 			new Item.Properties().spawnEgg(ModEntityTypes.FROSTBITE));
 	//?} else {
-	/*public static final Item FROSTBITE_SPAWN_EGG = registerItem(ModItemIds.FROSTBITE_SPAWN_EGG,
-			properties -> new SpawnEggItem(ModEntityTypes.FROSTBITE, 0xFFFFFF, 0xFFFFFF, properties), new Item.Properties());
+	/*
+	public static final boolean LEGACY_SPAWN_EGG = EmbersAndIcicles.CONFIG.legacySpawnEgg;
+	public static final Item FROSTBITE_SPAWN_EGG = registerItem(ModItemIds.FROSTBITE_SPAWN_EGG,
+			properties -> new SpawnEggItem(ModEntityTypes.FROSTBITE, LEGACY_SPAWN_EGG ? 0x5A8A84 : 0xFFFFFF, LEGACY_SPAWN_EGG ? 0xC8E6ED : 0xFFFFFF, properties), new Item.Properties());
 	*///?}
 	//?} else {
 	/*public static final Item ICE_BALL = Items.ICE_BALL;

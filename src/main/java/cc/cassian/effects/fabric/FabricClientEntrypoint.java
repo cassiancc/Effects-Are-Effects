@@ -15,7 +15,8 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 //?} else if <26 {
-/*import cc.cassian.effects.registry.ModBlocks;
+/*import cc.cassian.effects.client.LegacySpawnEgg;
+import cc.cassian.effects.registry.ModBlocks;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -42,6 +43,7 @@ public class FabricClientEntrypoint implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BRITTLE_ICE, RenderType.translucent());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ICE_CRYSTAL, RenderType.cutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ICICLE, RenderType.cutout());
+		LegacySpawnEgg.register();
 		*///?}
 	}
 }
