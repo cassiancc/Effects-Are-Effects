@@ -2,6 +2,9 @@
   "required": true,
   "package": "cc.cassian.effects.mixin",
   "compatibilityLevel": "${mixin_java}",
+  "client": [
+    "burning.HudMixin"
+  ],
   "mixins": [
     "burning.EntityMixin",
     "burning.LivingEntityMixin",
@@ -15,5 +18,5 @@
   },
   "overwrites": {
     "requireAnnotations": true
-	}
+  }
 }

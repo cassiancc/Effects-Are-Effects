@@ -32,6 +32,31 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class ModUtil {
+
+	private static final Identifier full = EmbersAndIcicles.of("hud/heart/burning_full");
+	private static final Identifier fullBlinking = EmbersAndIcicles.of("hud/heart/burning_full_blinking");
+	private static final Identifier half = EmbersAndIcicles.of("hud/heart/burning_half");
+	private static final Identifier halfBlinking = EmbersAndIcicles.of("hud/heart/burning_half_blinking");
+	private static final Identifier hardcoreFull = EmbersAndIcicles.of("hud/heart/burning_hardcore_full");
+	private static final Identifier hardcoreFullBlinking = EmbersAndIcicles.of("hud/heart/burning_hardcore_full_blinking");
+	private static final Identifier hardcoreHalf = EmbersAndIcicles.of("hud/heart/burning_hardcore_half");
+	private static final Identifier hardcoreHalfBlinking = EmbersAndIcicles.of("hud/heart/burning_hardcore_half_blinking");
+	
+	public static Identifier getSprite(final boolean isHardcore, final boolean isHalf, final boolean isBlink) {
+		if (!isHardcore) {
+			if (isHalf) {
+				return isBlink ? halfBlinking : half;
+			} else {
+				return isBlink ? fullBlinking : full;
+			}
+		} else if (isHalf) {
+			return isBlink ? hardcoreHalfBlinking : hardcoreHalf;
+		} else {
+			return isBlink ? hardcoreFullBlinking : hardcoreFull;
+		}
+	}
+	
+	
 	//~ if >26.2 'LootItemCondition.Builder'->'Holder.Reference<LootItemCondition>'
 	public static Holder.Reference<LootItemCondition> silkTouch(HolderLookup.Provider provider) {
 		return
