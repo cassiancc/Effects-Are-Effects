@@ -23,9 +23,15 @@ tasks.named<ProcessResources>("processResources") {
 		this["mod_name"] = prop("mod.name")
 		this["mod_description"] = prop("mod.description")
 		this["mod_license"] = prop("mod.license")
+		this["mixin_java"] = when {
+			stonecutter.eval(mcVersion, ">=26") -> "JAVA_25"
+			stonecutter.eval(mcVersion, ">=1.21") -> "JAVA_21"
+			else -> "JAVA_17"
+		}
 	}
+	inputs.properties(props)
 
-	filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml", "META-INF/mods.toml")) {
+	filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml", "META-INF/mods.toml", "*.mixins.json")) {
 		expand(props)
 	}
 
