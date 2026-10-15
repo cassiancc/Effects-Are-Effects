@@ -34,6 +34,9 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 *///?}
 //? if >=26.3
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+//? if <26.4 {
+import cc.cassian.effects.backport.FrozenCaves;
+//?}
 
 
 import static cc.cassian.effects.util.ModUtil.silkTouch;
@@ -114,7 +117,20 @@ public class FabricEntrypoint implements ModInitializer {
 			//~ if <26 'insertAfter'->'addAfter'
 			event.insertAfter(Items.SNOWBALL, ModItems.ICE_BALL);
 		});
+		registerFrozenCaves();
 		//?}
 	}
+
+	//? if <26.4 {
+	private static void registerFrozenCaves() {
+		for (FrozenCaves.TabInsertion insertion : FrozenCaves.tabInsertions()) {
+			//~ if <26 'CreativeModeTabEvents.modifyOutputEvent'->'ItemGroupEvents.modifyEntriesEvent'
+			CreativeModeTabEvents.modifyOutputEvent(insertion.tab()).register(event -> {
+				//~ if <26 'insertAfter'->'addAfter'
+				event.insertAfter(insertion.after(), insertion.item());
+			});
+		}
+	}
+	//?}
 }
 //?}

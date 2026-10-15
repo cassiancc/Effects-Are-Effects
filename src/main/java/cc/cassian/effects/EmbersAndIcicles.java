@@ -17,6 +17,7 @@ public class EmbersAndIcicles {
 	public static void onInitialize() {
 		ModSoundEvents.init();
 		ModParticleTypes.init();
+		ModBlocks.init();
 		ModEntityTypes.init();
 		ModItems.init();
 		ModEffects.init();
