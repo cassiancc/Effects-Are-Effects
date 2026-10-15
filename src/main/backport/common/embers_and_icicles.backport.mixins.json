@@ -6,6 +6,7 @@
     "BlockBehaviourAccessor",
     "FrostedIceBlockMixin",
     "LiquidBlockMixin",
+    "MushroomBlockMixin",
     "SnowLayerBlockMixin"
   ],
   "client": [],
