@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlockBehaviourAccessor",
-    "LiquidBlockMixin"
+    "FrostedIceBlockMixin",
+    "LiquidBlockMixin",
+    "SnowLayerBlockMixin"
   ],
   "client": [],
   "injectors": {
