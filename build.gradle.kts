@@ -236,6 +236,14 @@ stonecutter {
 		replace("guiGraphics.renderFakeItem", "guiGraphics.fakeItem")
 	}
 	replacements.string {
+		direction = eval(current.version, ">=26.2")
+		replace("DripstoneThickness", "SpeleothemThickness")
+	}
+	replacements.string {
+		direction = eval(current.version, ">=26.2")
+		replace("DRIPSTONE_THICKNESS", "SPELEOTHEM_THICKNESS")
+	}
+	replacements.string {
 		direction = eval(current.version, ">1.21.2")
 		replace("pushPose", "pushMatrix")
 	}
