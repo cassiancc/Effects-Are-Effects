@@ -1,6 +1,7 @@
 # Embers and Icicles
 
 <a href='https://modrinth.com/mod/embers-and-icicles/versions?l=fabric'><img alt="fabric" height="56" src="https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/supported/fabric_vector.svg"></a>
+<a href='https://modrinth.com/mod/embers-and-icicles/versions?l=neoforge'><img alt="neoforge" height="56" src="https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/supported/neoforge_vector.svg"></a>
 
 ## Features
 
@@ -8,6 +9,12 @@
 - A status effect for **Burning**, so players have an indicator on how long they will burn for.
 - On versions below 26.4, the Freezing effect and Ice Balls are backported.
 - By default, Ice Balls are now dropped when mining Ice without Silk Touch.
+- On versions below 26.4, the rest of the indev 26.4 drop is backported:
+  - **Ice Caves**, a cave biome beneath frozen oceans made of bands of packed ice and calcite, with large icicles, icicle clusters, ice crystals, snow, ice cave ores, and crevasses covered in brittle ice.
+  - **Frostbites**, zombies found in snowy biomes and ice caves whose attacks inflict Freezing. Some of them throw Ice Balls. Zombies standing in Powder Snow turn into Frostbites, while Husks and Drowned turn back into Zombies.
+  - **Brittle Ice**, **Ice Crystals** and **Icicles**. Icicles grow in the dark, melt near light, and fall on whoever's below.
+  - New ice sounds, Water next to Blue Ice freezing into Brittle Ice, Snow on Packed Ice, Snowballs knocking back players, Mushrooms placeable at any light level, and new Wandering Trader trades.
+  - Most of these can be toggled in the config.
 
 ## Installation
 
