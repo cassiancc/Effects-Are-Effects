@@ -19,18 +19,19 @@ public class InsideBlockEffectTypeMixin {
 	private static void addFreezing(Entity instance, int numberOfTicks, Operation<Void> original) {
 	//?} else {
 	/*@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V", ordinal = 0), method = "aiStep")
-	private static void addFreezing(LivingEntity instance, int numberOfTicks, Operation<Void> original) {
+	private void addFreezing(LivingEntity instance, int numberOfTicks, Operation<Void> original) {
 	*///?}
 		if (instance instanceof LivingEntity livingEntity) {
-			livingEntity.addEffect(new MobEffectInstance(ModEffects.FREEZING, numberOfTicks, 0, true, true));
+			livingEntity.addEffect(new MobEffectInstance(ModEffects.FREEZING, 1, 0, true, true));
 		}
 	}
 
 	//? if <26 {
+	
 	/*@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V", ordinal = 1), method = "aiStep")
-	private static void clearFreezing(LivingEntity instance, int i, Operation<Void> original) {
-		if (instance instanceof LivingEntity livingEntity) {
-			livingEntity.removeEffect(ModEffects.FREEZING);
+	private void keepFreezing(LivingEntity instance, int ticks, Operation<Void> original) {
+		if (!instance.hasEffect(ModEffects.FREEZING)) {
+			original.call(instance, ticks);
 		}
 	}
 	*///?}

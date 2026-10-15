@@ -1,7 +1,7 @@
 package cc.cassian.effects.util;
 
-//? fabric {
 import cc.cassian.effects.EmbersAndIcicles;
+//? fabric {
 import net.fabricmc.loader.api.FabricLoader;
 //?} else {
 /*import net.neoforged.fml.ModList;
@@ -13,7 +13,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-
 //? if >=26.3 {
 import net.minecraft.world.level.storage.loot.predicates.LootPredicates;
 import net.minecraft.core.Holder;
@@ -21,15 +20,13 @@ import net.minecraft.core.Holder;
 /*import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.core.component.predicates.DataComponentPredicates;
 import net.minecraft.core.component.predicates.EnchantmentsPredicate;
+*///?} else {
+/*import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+*///?}
 //~ if <26.2 'predicates'->'criterion' {
 import net.minecraft.advancements.predicates.EnchantmentPredicate;
 import net.minecraft.advancements.predicates.MinMaxBounds;
 //~}
-*///?} else {
-/*import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.minecraft.advancements.criterion.EnchantmentPredicate;
-import net.minecraft.advancements.criterion.MinMaxBounds;
-*///?}
 
 import java.nio.file.Path;
 import java.util.List;

@@ -8,7 +8,8 @@
 		"cassiancc"
 	],
 	"contributors": [
-		"ProbablyEkho"
+		"ProbablyEkho",
+		"evanbones"
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/project/embers-and-icicles",
@@ -30,7 +31,8 @@
 		]
 	},
 	"mixins": [
-		"embers_and_icicles.mixins.json"
+		"embers_and_icicles.mixins.json",
+		"embers_and_icicles.backport.mixins.json"
 	],
 	"depends": {
 		"fabric-api": "*"

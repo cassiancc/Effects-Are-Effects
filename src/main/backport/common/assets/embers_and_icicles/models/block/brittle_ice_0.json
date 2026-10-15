@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "embers_and_icicles:block/brittle_ice_0"
+  },
+  "render_type": "minecraft:translucent"
+}

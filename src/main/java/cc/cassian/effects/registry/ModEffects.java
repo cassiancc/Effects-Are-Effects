@@ -8,6 +8,10 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+//? if >26.3 {
+/*import cc.cassian.effects.util.ModUtil;
+import net.minecraft.world.effect.MobEffects;
+*///?}
 
 public class ModEffects {
 	public static final Holder<MobEffect> BURNING =

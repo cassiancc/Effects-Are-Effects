@@ -1,0 +1,16 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "minecraft:frozen_ocean",
+    "minecraft:deep_frozen_ocean",
+    "minecraft:frozen_peaks",
+    "minecraft:frozen_river",
+    "minecraft:ice_spikes"
+  ],
+  "spawners": {
+    "type": "embers_and_icicles:frostbite",
+    "weight": 25,
+    "minCount": 4,
+    "maxCount": 4
+  }
+}

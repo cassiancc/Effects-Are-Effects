@@ -23,9 +23,15 @@ tasks.named<ProcessResources>("processResources") {
 		this["mod_name"] = prop("mod.name")
 		this["mod_description"] = prop("mod.description")
 		this["mod_license"] = prop("mod.license")
+		this["mixin_java"] = when {
+			stonecutter.eval(mcVersion, ">=26") -> "JAVA_25"
+			stonecutter.eval(mcVersion, ">=1.21") -> "JAVA_21"
+			else -> "JAVA_17"
+		}
 	}
+	inputs.properties(props)
 
-	filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml", "META-INF/mods.toml")) {
+	filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml", "META-INF/mods.toml", "*.mixins.json")) {
 		expand(props)
 	}
 
@@ -33,6 +39,17 @@ tasks.named<ProcessResources>("processResources") {
 
 tasks.named("processResources") {
 	dependsOn(":${stonecutter.current.project}:stonecutterGenerate")
+}
+
+val backportResources = when {
+	stonecutter.eval(mcVersion, ">=26.4") -> listOf("26.4")
+	stonecutter.eval(mcVersion, ">=26.3") -> listOf("common", "26", "26.3")
+	stonecutter.eval(mcVersion, ">=26") -> listOf("common", "26", "pre_26.3", "26.1")
+	else -> listOf("common", "pre_26.3", "1.21.1")
+}
+sourceSets.main {
+	backportResources.forEach { resources.srcDir(rootProject.file("src/main/backport/$it")) }
+	resources.srcDir(rootProject.file("src/main/datagen/${minecraft}"))
 }
 
 version = "${property("mod.version")}+${property("deps.minecraft")}-${loader}"
@@ -175,12 +192,18 @@ dependencies {
 	}
 
 	// Configs
-	implementation("folk.sisby:kaleido-config:${property("deps.kaleido")}")
+	if (fabric || !hasProperty("deps.mcqoy")) {
+		implementation("folk.sisby:kaleido-config:${property("deps.kaleido")}")
+	} else {
+		compileOnly("folk.sisby:kaleido-config:${property("deps.kaleido")}")
+	}
 	include("folk.sisby:kaleido-config:${property("deps.kaleido")}")
 
 	// McQoy
 	if (hasProperty("deps.mcqoy")) {
-		modLocalRuntime("dev.isxander:yet-another-config-lib:${property("deps.yacl")}-${loader}")
+		modLocalRuntime("dev.isxander:yet-another-config-lib:${property("deps.yacl")}-${loader}") {
+			if (!fabric) isTransitive = false
+		}
 		modLocalRuntime("maven.modrinth:mcqoy:${property("deps.mcqoy")}")
 	}
 
@@ -195,6 +218,10 @@ dependencies {
             isTransitive = false
         }
     }
+
+	if (mcVersion == "1.21.1") {
+		modCompileOnly("maven.modrinth:tiny-takeover-backport:${if (fabric) "rFelsdfF" else "5JqJpRdN"}")
+	}
 
 	// Mixin Constraints - embedded
 //	implementation("com.moulberry:mixinconstraints:1.0.9")
@@ -222,6 +249,14 @@ stonecutter {
 		replace("guiGraphics.renderFakeItem", "guiGraphics.fakeItem")
 	}
 	replacements.string {
+		direction = eval(current.version, ">=26.2")
+		replace("DripstoneThickness", "SpeleothemThickness")
+	}
+	replacements.string {
+		direction = eval(current.version, ">=26.2")
+		replace("DRIPSTONE_THICKNESS", "SPELEOTHEM_THICKNESS")
+	}
+	replacements.string {
 		direction = eval(current.version, ">1.21.2")
 		replace("pushPose", "pushMatrix")
 	}
@@ -231,14 +266,10 @@ stonecutter {
 	}
 }
 
-if (!fabric) {
-	tasks.register<Sync>("syncDatagen") {
-		from(project(":${minecraft}-fabric").tasks.named("runDatagen"))
-		into(file("src/main/generated/"))
-	}
-} else {
+if (fabric) {
 	fabricApi {
 		configureDataGeneration() {
+			outputDirectory = file("$rootDir/src/main/datagen/$minecraft")
 			client = true
 			modId = "embers_and_icicles"
 		}
@@ -254,11 +285,6 @@ tasks {
 		dependsOn("build")
 	}
 
-	if (stonecutter.eval(mcVersion, ">=26.4")) {
-		processResources {
-			exclude("**/freezing*", "**/ice_ball*")
-		}
-	}
 	if (stonecutter.eval(mcVersion, "<26.3")) {
 		processResources {
 			exclude("**/recipe/brewing*")

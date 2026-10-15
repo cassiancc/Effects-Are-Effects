@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#minecraft:stone_ore_replaceables",
+    "#minecraft:deepslate_ore_replaceables",
+    "minecraft:tuff",
+    "#embers_and_icicles:ice_cave_ore_replaceables"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "cc.cassian.effects.mixin.backport",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": []
+}

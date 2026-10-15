@@ -12,7 +12,7 @@ version="${mod_version}"
 displayName="${mod_name}"
 description="${mod_description}"
 authors="cassiancc"
-credits="cassiancc, ProbablyEkho"
+credits="cassiancc, ProbablyEkho, evanbones"
 
 [[dependencies.embers_and_icicles]]
 modId="neoforge"
@@ -30,3 +30,6 @@ side="BOTH"
 
 [[mixins]]
 config = "embers_and_icicles.mixins.json"
+
+[[mixins]]
+config = "embers_and_icicles.backport.mixins.json"

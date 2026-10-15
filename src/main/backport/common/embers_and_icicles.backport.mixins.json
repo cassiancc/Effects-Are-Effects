@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "cc.cassian.effects.mixin.backport",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlockBehaviourAccessor",
+    "FrostedIceBlockMixin",
+    "LiquidBlockMixin",
+    "MultiNoiseBiomeSourceParameterListsMixin",
+    "MushroomBlockMixin",
+    "NoiseBasedChunkGeneratorMixin",
+    "OverworldBiomeBuilderMixin",
+    "PlayerMixin",
+    "SnowLayerBlockMixin",
+    "SpawnPlacementsInvoker",
+    "StrayMixin",
+    "VanillaAdventureAdvancementsMixin",
+    "ZombieInvoker",
+    "ZombieMixin"
+  ],
+  "client": [
+    "client.AbstractZombieRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

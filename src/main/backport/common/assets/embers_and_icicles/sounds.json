@@ -1,0 +1,539 @@
+{
+  "block.blue_ice.break": {
+    "sounds": [
+      "embers_and_icicles:block/blue_ice/break1",
+      "embers_and_icicles:block/blue_ice/break2",
+      "embers_and_icicles:block/blue_ice/break3",
+      "embers_and_icicles:block/blue_ice/break4",
+      "embers_and_icicles:block/blue_ice/break5",
+      "embers_and_icicles:block/blue_ice/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.blue_ice.fall": {
+    "sounds": [
+      "embers_and_icicles:block/blue_ice/hit1",
+      "embers_and_icicles:block/blue_ice/hit2",
+      "embers_and_icicles:block/blue_ice/hit3",
+      "embers_and_icicles:block/blue_ice/hit4",
+      "embers_and_icicles:block/blue_ice/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.blue_ice.hit": {
+    "sounds": [
+      "embers_and_icicles:block/blue_ice/hit1",
+      "embers_and_icicles:block/blue_ice/hit2",
+      "embers_and_icicles:block/blue_ice/hit3",
+      "embers_and_icicles:block/blue_ice/hit4",
+      "embers_and_icicles:block/blue_ice/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.blue_ice.place": {
+    "sounds": [
+      "embers_and_icicles:block/blue_ice/place1",
+      "embers_and_icicles:block/blue_ice/place2",
+      "embers_and_icicles:block/blue_ice/place3",
+      "embers_and_icicles:block/blue_ice/place4",
+      "embers_and_icicles:block/blue_ice/place5",
+      "embers_and_icicles:block/blue_ice/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.blue_ice.step": {
+    "sounds": [
+      "embers_and_icicles:block/blue_ice/step1",
+      "embers_and_icicles:block/blue_ice/step2",
+      "embers_and_icicles:block/blue_ice/step3",
+      "embers_and_icicles:block/blue_ice/step4",
+      "embers_and_icicles:block/blue_ice/step5",
+      "embers_and_icicles:block/blue_ice/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.brittle_ice.break": {
+    "sounds": [
+      "embers_and_icicles:block/brittle_ice/break1",
+      "embers_and_icicles:block/brittle_ice/break2",
+      "embers_and_icicles:block/brittle_ice/break3",
+      "embers_and_icicles:block/brittle_ice/break4",
+      "embers_and_icicles:block/brittle_ice/break5",
+      "embers_and_icicles:block/brittle_ice/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.brittle_ice.crack": {
+    "sounds": [
+      "embers_and_icicles:block/brittle_ice/crack1",
+      "embers_and_icicles:block/brittle_ice/crack2",
+      "embers_and_icicles:block/brittle_ice/crack3",
+      "embers_and_icicles:block/brittle_ice/crack4",
+      "embers_and_icicles:block/brittle_ice/crack5"
+    ],
+    "subtitle": "subtitles.block.brittle_ice.crack"
+  },
+  "block.brittle_ice.fall": {
+    "sounds": [
+      "embers_and_icicles:block/brittle_ice/break1",
+      "embers_and_icicles:block/brittle_ice/break2",
+      "embers_and_icicles:block/brittle_ice/break3",
+      "embers_and_icicles:block/brittle_ice/break4",
+      "embers_and_icicles:block/brittle_ice/break5",
+      "embers_and_icicles:block/brittle_ice/break6"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.brittle_ice.hit": {
+    "sounds": [
+      "embers_and_icicles:block/brittle_ice/hit1",
+      "embers_and_icicles:block/brittle_ice/hit2",
+      "embers_and_icicles:block/brittle_ice/hit3",
+      "embers_and_icicles:block/brittle_ice/hit4",
+      "embers_and_icicles:block/brittle_ice/hit5",
+      "embers_and_icicles:block/brittle_ice/hit6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.brittle_ice.place": {
+    "sounds": [
+      "embers_and_icicles:block/brittle_ice/place1",
+      "embers_and_icicles:block/brittle_ice/place2",
+      "embers_and_icicles:block/brittle_ice/place3",
+      "embers_and_icicles:block/brittle_ice/place4",
+      "embers_and_icicles:block/brittle_ice/place5",
+      "embers_and_icicles:block/brittle_ice/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.brittle_ice.step": {
+    "sounds": [
+      "embers_and_icicles:block/brittle_ice/step1",
+      "embers_and_icicles:block/brittle_ice/step2",
+      "embers_and_icicles:block/brittle_ice/step3",
+      "embers_and_icicles:block/brittle_ice/step4",
+      "embers_and_icicles:block/brittle_ice/step5",
+      "embers_and_icicles:block/brittle_ice/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.frosted_ice.break": {
+    "sounds": [
+      "embers_and_icicles:block/frosted_ice/break1",
+      "embers_and_icicles:block/frosted_ice/break2",
+      "embers_and_icicles:block/frosted_ice/break3",
+      "embers_and_icicles:block/frosted_ice/break4",
+      "embers_and_icicles:block/frosted_ice/break5",
+      "embers_and_icicles:block/frosted_ice/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.frosted_ice.fall": {
+    "sounds": [
+      "embers_and_icicles:block/frosted_ice/hit1",
+      "embers_and_icicles:block/frosted_ice/hit2",
+      "embers_and_icicles:block/frosted_ice/hit3",
+      "embers_and_icicles:block/frosted_ice/hit4",
+      "embers_and_icicles:block/frosted_ice/hit5",
+      "embers_and_icicles:block/frosted_ice/hit6"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.frosted_ice.hit": {
+    "sounds": [
+      "embers_and_icicles:block/frosted_ice/hit1",
+      "embers_and_icicles:block/frosted_ice/hit2",
+      "embers_and_icicles:block/frosted_ice/hit3",
+      "embers_and_icicles:block/frosted_ice/hit4",
+      "embers_and_icicles:block/frosted_ice/hit5",
+      "embers_and_icicles:block/frosted_ice/hit6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.frosted_ice.place": {
+    "sounds": [
+      "embers_and_icicles:block/frosted_ice/place1",
+      "embers_and_icicles:block/frosted_ice/place2",
+      "embers_and_icicles:block/frosted_ice/place3",
+      "embers_and_icicles:block/frosted_ice/place4",
+      "embers_and_icicles:block/frosted_ice/place5",
+      "embers_and_icicles:block/frosted_ice/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.frosted_ice.step": {
+    "sounds": [
+      "embers_and_icicles:block/frosted_ice/step1",
+      "embers_and_icicles:block/frosted_ice/step2",
+      "embers_and_icicles:block/frosted_ice/step3",
+      "embers_and_icicles:block/frosted_ice/step4",
+      "embers_and_icicles:block/frosted_ice/step5",
+      "embers_and_icicles:block/frosted_ice/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.ice.break": {
+    "sounds": [
+      "embers_and_icicles:block/ice/break1",
+      "embers_and_icicles:block/ice/break2",
+      "embers_and_icicles:block/ice/break3",
+      "embers_and_icicles:block/ice/break4",
+      "embers_and_icicles:block/ice/break5",
+      "embers_and_icicles:block/ice/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.ice.fall": {
+    "sounds": [
+      "embers_and_icicles:block/ice/hit1",
+      "embers_and_icicles:block/ice/hit2",
+      "embers_and_icicles:block/ice/hit3",
+      "embers_and_icicles:block/ice/hit4",
+      "embers_and_icicles:block/ice/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.ice.hit": {
+    "sounds": [
+      "embers_and_icicles:block/ice/hit1",
+      "embers_and_icicles:block/ice/hit2",
+      "embers_and_icicles:block/ice/hit3",
+      "embers_and_icicles:block/ice/hit4",
+      "embers_and_icicles:block/ice/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.ice.place": {
+    "sounds": [
+      "embers_and_icicles:block/ice/place1",
+      "embers_and_icicles:block/ice/place2",
+      "embers_and_icicles:block/ice/place3",
+      "embers_and_icicles:block/ice/place4",
+      "embers_and_icicles:block/ice/place5",
+      "embers_and_icicles:block/ice/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.ice.step": {
+    "sounds": [
+      "embers_and_icicles:block/ice/step1",
+      "embers_and_icicles:block/ice/step2",
+      "embers_and_icicles:block/ice/step3",
+      "embers_and_icicles:block/ice/step4",
+      "embers_and_icicles:block/ice/step5",
+      "embers_and_icicles:block/ice/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.ice_crystal.break": {
+    "sounds": [
+      "embers_and_icicles:block/ice_crystal/break1",
+      "embers_and_icicles:block/ice_crystal/break2",
+      "embers_and_icicles:block/ice_crystal/break3",
+      "embers_and_icicles:block/ice_crystal/break4",
+      "embers_and_icicles:block/ice_crystal/break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.ice_crystal.fall": {
+    "sounds": [
+      "embers_and_icicles:block/ice_crystal/hit1",
+      "embers_and_icicles:block/ice_crystal/hit2",
+      "embers_and_icicles:block/ice_crystal/hit3",
+      "embers_and_icicles:block/ice_crystal/hit4",
+      "embers_and_icicles:block/ice_crystal/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.ice_crystal.hit": {
+    "sounds": [
+      "embers_and_icicles:block/ice_crystal/hit1",
+      "embers_and_icicles:block/ice_crystal/hit2",
+      "embers_and_icicles:block/ice_crystal/hit3",
+      "embers_and_icicles:block/ice_crystal/hit4",
+      "embers_and_icicles:block/ice_crystal/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.ice_crystal.place": {
+    "sounds": [
+      "embers_and_icicles:block/ice_crystal/place1",
+      "embers_and_icicles:block/ice_crystal/place2",
+      "embers_and_icicles:block/ice_crystal/place3",
+      "embers_and_icicles:block/ice_crystal/place4",
+      "embers_and_icicles:block/ice_crystal/place5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.ice_crystal.step": {
+    "sounds": [
+      "embers_and_icicles:block/ice_crystal/step1",
+      "embers_and_icicles:block/ice_crystal/step2",
+      "embers_and_icicles:block/ice_crystal/step3",
+      "embers_and_icicles:block/ice_crystal/step4",
+      "embers_and_icicles:block/ice_crystal/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.icicle.break": {
+    "sounds": [
+      "embers_and_icicles:block/icicle/break1",
+      "embers_and_icicles:block/icicle/break2",
+      "embers_and_icicles:block/icicle/break3",
+      "embers_and_icicles:block/icicle/break4",
+      "embers_and_icicles:block/icicle/break5",
+      "embers_and_icicles:block/icicle/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.icicle.fall": {
+    "sounds": [
+      "embers_and_icicles:block/icicle/hit1",
+      "embers_and_icicles:block/icicle/hit2",
+      "embers_and_icicles:block/icicle/hit3",
+      "embers_and_icicles:block/icicle/hit4",
+      "embers_and_icicles:block/icicle/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.icicle.hit": {
+    "sounds": [
+      "embers_and_icicles:block/icicle/hit1",
+      "embers_and_icicles:block/icicle/hit2",
+      "embers_and_icicles:block/icicle/hit3",
+      "embers_and_icicles:block/icicle/hit4",
+      "embers_and_icicles:block/icicle/hit5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.icicle.land": {
+    "sounds": [
+      "embers_and_icicles:block/icicle/land1",
+      "embers_and_icicles:block/icicle/land2",
+      "embers_and_icicles:block/icicle/land3",
+      "embers_and_icicles:block/icicle/land4",
+      "embers_and_icicles:block/icicle/land5",
+      "embers_and_icicles:block/icicle/land6"
+    ],
+    "subtitle": "subtitles.block.icicle.land"
+  },
+  "block.icicle.place": {
+    "sounds": [
+      "embers_and_icicles:block/icicle/place1",
+      "embers_and_icicles:block/icicle/place2",
+      "embers_and_icicles:block/icicle/place3",
+      "embers_and_icicles:block/icicle/place4",
+      "embers_and_icicles:block/icicle/place5",
+      "embers_and_icicles:block/icicle/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.icicle.step": {
+    "sounds": [
+      "embers_and_icicles:block/icicle/step1",
+      "embers_and_icicles:block/icicle/step2",
+      "embers_and_icicles:block/icicle/step3",
+      "embers_and_icicles:block/icicle/step4",
+      "embers_and_icicles:block/icicle/step5",
+      "embers_and_icicles:block/icicle/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.packed_ice.break": {
+    "sounds": [
+      "embers_and_icicles:block/packed_ice/break1",
+      "embers_and_icicles:block/packed_ice/break2",
+      "embers_and_icicles:block/packed_ice/break3",
+      "embers_and_icicles:block/packed_ice/break4",
+      "embers_and_icicles:block/packed_ice/break5",
+      "embers_and_icicles:block/packed_ice/break6"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.packed_ice.fall": {
+    "sounds": [
+      "embers_and_icicles:block/packed_ice/hit1",
+      "embers_and_icicles:block/packed_ice/hit2",
+      "embers_and_icicles:block/packed_ice/hit3",
+      "embers_and_icicles:block/packed_ice/hit4",
+      "embers_and_icicles:block/packed_ice/hit5",
+      "embers_and_icicles:block/packed_ice/hit6"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.packed_ice.hit": {
+    "sounds": [
+      "embers_and_icicles:block/packed_ice/hit1",
+      "embers_and_icicles:block/packed_ice/hit2",
+      "embers_and_icicles:block/packed_ice/hit3",
+      "embers_and_icicles:block/packed_ice/hit4",
+      "embers_and_icicles:block/packed_ice/hit5",
+      "embers_and_icicles:block/packed_ice/hit6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.packed_ice.place": {
+    "sounds": [
+      "embers_and_icicles:block/packed_ice/place1",
+      "embers_and_icicles:block/packed_ice/place2",
+      "embers_and_icicles:block/packed_ice/place3",
+      "embers_and_icicles:block/packed_ice/place4",
+      "embers_and_icicles:block/packed_ice/place5",
+      "embers_and_icicles:block/packed_ice/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.packed_ice.step": {
+    "sounds": [
+      "embers_and_icicles:block/packed_ice/step1",
+      "embers_and_icicles:block/packed_ice/step2",
+      "embers_and_icicles:block/packed_ice/step3",
+      "embers_and_icicles:block/packed_ice/step4",
+      "embers_and_icicles:block/packed_ice/step5",
+      "embers_and_icicles:block/packed_ice/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "entity.drowned.converted_to_zombie": {
+    "sounds": [
+      "embers_and_icicles:mob/drowned/convert_to_zombie1",
+      "embers_and_icicles:mob/drowned/convert_to_zombie2"
+    ],
+    "subtitle": "subtitles.entity.drowned.converted_to_zombie"
+  },
+  "entity.frostbite.ambient": {
+    "sounds": [
+      "embers_and_icicles:mob/frostbite/ambient1",
+      "embers_and_icicles:mob/frostbite/ambient2",
+      "embers_and_icicles:mob/frostbite/ambient3",
+      "embers_and_icicles:mob/frostbite/ambient4"
+    ],
+    "subtitle": "subtitles.entity.frostbite.ambient"
+  },
+  "entity.frostbite.converted_to_zombie": {
+    "sounds": [
+      "embers_and_icicles:mob/frostbite/convert1",
+      "embers_and_icicles:mob/frostbite/convert2"
+    ],
+    "subtitle": "subtitles.entity.frostbite.converted_to_zombie"
+  },
+  "entity.frostbite.death": {
+    "sounds": [
+      "embers_and_icicles:mob/frostbite/death"
+    ],
+    "subtitle": "subtitles.entity.frostbite.death"
+  },
+  "entity.frostbite.hurt": {
+    "sounds": [
+      "embers_and_icicles:mob/frostbite/hurt1",
+      "embers_and_icicles:mob/frostbite/hurt2",
+      "embers_and_icicles:mob/frostbite/hurt3",
+      "embers_and_icicles:mob/frostbite/hurt4"
+    ],
+    "subtitle": "subtitles.entity.frostbite.hurt"
+  },
+  "entity.frostbite.step": {
+    "sounds": [
+      "embers_and_icicles:mob/frostbite/step1",
+      "embers_and_icicles:mob/frostbite/step2",
+      "embers_and_icicles:mob/frostbite/step3",
+      "embers_and_icicles:mob/frostbite/step4",
+      "embers_and_icicles:mob/frostbite/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "entity.ice_ball.break": {
+    "sounds": [
+      {
+        "name": "embers_and_icicles:entity/ice_ball/hit1",
+        "pitch": 2.0
+      },
+      {
+        "name": "embers_and_icicles:entity/ice_ball/hit2",
+        "pitch": 2.0
+      },
+      {
+        "name": "embers_and_icicles:entity/ice_ball/hit3",
+        "pitch": 2.0
+      },
+      {
+        "name": "embers_and_icicles:entity/ice_ball/hit4",
+        "pitch": 2.0
+      }
+    ],
+    "subtitle": "subtitles.entity.ice_ball.break"
+  },
+  "entity.ice_ball.throw": {
+    "sounds": [
+      "embers_and_icicles:entity/ice_ball/bow"
+    ],
+    "subtitle": "subtitles.entity.ice_ball.throw"
+  },
+  "entity.zombie.converted_to_frostbite": {
+    "sounds": [
+      "embers_and_icicles:mob/zombie/convert1",
+      "embers_and_icicles:mob/zombie/convert2"
+    ],
+    "subtitle": "subtitles.entity.zombie.converted_to_frostbite"
+  },
+  "event.mob_effect.freezing": {
+    "sounds": [
+      "embers_and_icicles:event/mob_effects/freezing"
+    ],
+    "subtitle": "subtitles.event.mob_effect.freezing"
+  },
+  "music.overworld.ice_caves": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/an_ordinary_day",
+        "stream": true
+      },
+      {
+        "name": "minecraft:music/game/danny",
+        "stream": true
+      },
+      {
+        "name": "minecraft:music/game/deeper",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "minecraft:music/game/eld_unknown",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "minecraft:music/game/endless",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "minecraft:music/game/infinite_amethyst",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "minecraft:music/game/key",
+        "stream": true
+      },
+      {
+        "name": "minecraft:music/game/oxygene",
+        "stream": true
+      },
+      {
+        "name": "minecraft:music/game/pokopoko",
+        "stream": true,
+        "volume": 0.8
+      },
+      {
+        "name": "minecraft:music/game/subwoofer_lullaby",
+        "stream": true
+      },
+      {
+        "name": "minecraft:music/game/wending",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  }
+}
