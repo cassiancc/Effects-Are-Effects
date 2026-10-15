@@ -180,8 +180,8 @@ dependencies {
 
 	// McQoy
 	if (hasProperty("deps.mcqoy")) {
-		localRuntime("dev.isxander:yet-another-config-lib:${property("deps.yacl")}-${loader}")
-		localRuntime("maven.modrinth:mcqoy:${property("deps.mcqoy")}")
+		modLocalRuntime("dev.isxander:yet-another-config-lib:${property("deps.yacl")}-${loader}")
+		modLocalRuntime("maven.modrinth:mcqoy:${property("deps.mcqoy")}")
 	}
 
 	if (hasProperty("deps.modmenu")) {

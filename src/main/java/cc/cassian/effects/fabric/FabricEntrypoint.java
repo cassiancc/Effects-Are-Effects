@@ -30,6 +30,7 @@ import net.minecraft.advancements.triggers.EffectsChangedTrigger;
 //?}
 //? if <26.3 && >26 {
 /*import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 *///?}
 //? if >=26.3
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
