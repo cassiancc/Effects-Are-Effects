@@ -4,6 +4,8 @@ package cc.cassian.effects.entity;
 import cc.cassian.effects.registry.ModEffects;
 import cc.cassian.effects.registry.ModEntityTypes;
 import cc.cassian.effects.registry.ModItems;
+import cc.cassian.effects.registry.ModSoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -23,6 +25,7 @@ import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 
 public class IceBall extends ThrowableItemProjectile {
 	public IceBall(final EntityType<IceBall> type, final Level level) {
@@ -92,6 +95,9 @@ public class IceBall extends ThrowableItemProjectile {
 		super.onHit(hitResult);
 		if (!this.level().isClientSide()) {
 			this.level().broadcastEntityEvent(this, (byte)3);
+			Vec3 hitLocation = hitResult.getLocation();
+			this.level().playSound(null, hitLocation.x, hitLocation.y, hitLocation.z, ModSoundEvents.ICE_BALL_BREAK, SoundSource.NEUTRAL,
+					0.5F, 0.4F / (this.level().getRandom().nextFloat() * 0.4F + 0.8F));
 			this.discard();
 		}
 
