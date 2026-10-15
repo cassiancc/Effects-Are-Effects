@@ -2,7 +2,9 @@
   "required": true,
   "package": "cc.cassian.effects.mixin.backport",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "BlockBehaviourAccessor"
+  ],
   "client": [],
   "injectors": {
     "defaultRequire": 1

@@ -8,4 +8,9 @@ public class ModConfig extends WrappedConfig {
 	public boolean iceDropsIceBalls = true;
 	@Comment("Whether to rename Ice Balls to Ice Cubes")
 	public boolean iceCubes = true;
+
+	//? if <26.4 {
+	@Comment("Whether Ice, Packed Ice, Blue Ice and Frosted Ice use their 26.4 sounds")
+	public boolean newIceSounds = true;
+	//?}
 }

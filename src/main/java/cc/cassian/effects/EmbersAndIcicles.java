@@ -1,5 +1,7 @@
 package cc.cassian.effects;
 
+//? if <26.4
+import cc.cassian.effects.backport.FrozenCaves;
 import cc.cassian.effects.config.ModConfig;
 import cc.cassian.effects.registry.*;
 import cc.cassian.effects.util.ModUtil;
@@ -13,12 +15,14 @@ public class EmbersAndIcicles {
 	public static final ModConfig CONFIG = ModConfig.createToml(ModUtil.getConfigDir(), "", MOD_ID, ModConfig.class);
 
 	public static void onInitialize() {
+		ModSoundEvents.init();
+		ModParticleTypes.init();
 		ModEntityTypes.init();
 		ModItems.init();
 		ModEffects.init();
-		ModParticleTypes.init();
 		ModPotions.init();
-		ModSoundEvents.init();
+		//? if <26.4
+		FrozenCaves.setup();
 	}
 
 	public static Identifier of(String path) {
