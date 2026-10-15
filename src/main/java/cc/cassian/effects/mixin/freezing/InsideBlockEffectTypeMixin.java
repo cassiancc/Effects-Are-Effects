@@ -27,8 +27,8 @@ public class InsideBlockEffectTypeMixin {
 	}
 
 	//? if <26 {
-	/*
-	@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V", ordinal = 1), method = "aiStep")
+	
+	/*@WrapOperation(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setTicksFrozen(I)V", ordinal = 1), method = "aiStep")
 	private void keepFreezing(LivingEntity instance, int ticks, Operation<Void> original) {
 		if (!instance.hasEffect(ModEffects.FREEZING)) {
 			original.call(instance, ticks);

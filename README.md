@@ -25,7 +25,7 @@ Embers and Icicles is a client and server mod. Its dependencies are listed below
 ## FAQ
 
 - **Will this mod be ported to other versions/loaders?**
-    - I'm considering backporting this to the rest of 26.x, including a backport of Freezing. This will likely happen after the release of 26.4 after the implementation of Freezing is finalized. I have no plans to backport it further.
+  - My focus is primarily on 26.1 and above at this time, though a 1.21.1 backport was made to allow the mod a wider audience. I do not plan to backport the mod further than 1.21.1.
 
 ## Credits
 

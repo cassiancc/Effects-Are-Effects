@@ -12,22 +12,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-//? if >=26 {
+//~ if >=26 'MobSpawnType'-> 'EntitySpawnReason' {
 import net.minecraft.world.entity.EntitySpawnReason;
-//?} else {
-/*import net.minecraft.world.entity.MobSpawnType;
-*///?}
 
 @Mixin(Stray.class)
 public abstract class StrayMixin {
 	@Inject(method = "checkStraySpawnRules", at = @At("HEAD"), cancellable = true)
-	//? if >=26 {
 	private static void embers$spawnWithoutPowderSnow(EntityType<Stray> type, ServerLevelAccessor level, EntitySpawnReason spawnReason, BlockPos pos,
 													  RandomSource random, CallbackInfoReturnable<Boolean> cir) {
-	//?} else {
-	/*private static void embers$spawnWithoutPowderSnow(EntityType<Stray> type, ServerLevelAccessor level, MobSpawnType spawnReason, BlockPos pos,
-													  RandomSource random, CallbackInfoReturnable<Boolean> cir) {
-	*///?}
+	//~}
 		if (level.getBiome(pos).is(ModTags.SPAWNS_STRAYS_WITHOUT_POWDER_SNOW)) {
 			cir.setReturnValue(Monster.checkMonsterSpawnRules(type, level, spawnReason, pos, random));
 		}
