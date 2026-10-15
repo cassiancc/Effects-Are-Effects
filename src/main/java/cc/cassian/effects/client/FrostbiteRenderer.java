@@ -57,7 +57,8 @@ public class FrostbiteRenderer extends AbstractZombieRenderer<Frostbite, ZombieR
 	//?} else {
 	/*@Override
 	public Identifier getTextureLocation(final Zombie entity) {
-		return FROSTBITE_LOCATION;
+		// Tiny Takeover Backport only swaps the textures of vanilla mobs for its baby models.
+		return TinyTakeoverCompat.usesBabyModel(entity) ? FROSTBITE_BABY_LOCATION : FROSTBITE_LOCATION;
 	}
 	*///?}
 }

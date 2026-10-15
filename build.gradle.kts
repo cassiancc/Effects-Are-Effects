@@ -206,6 +206,10 @@ dependencies {
         }
     }
 
+	if (mcVersion == "1.21.1") {
+		modCompileOnly("maven.modrinth:tiny-takeover-backport:${if (fabric) "rFelsdfF" else "5JqJpRdN"}")
+	}
+
 	// Mixin Constraints - embedded
 //	implementation("com.moulberry:mixinconstraints:1.0.9")
 //	include("com.moulberry:mixinconstraints:1.0.9")

@@ -48,8 +48,10 @@ public class FrostbiteOuterLayer extends RenderLayer<ZombieRenderState, ZombieMo
 	@Override
 	public void render(final PoseStack poseStack, final MultiBufferSource buffer, final int packedLight, final Frostbite entity, final float limbSwing,
 					   final float limbSwingAmount, final float partialTicks, final float ageInTicks, final float netHeadYaw, final float headPitch) {
-		coloredCutoutModelCopyLayerRender(this.getParentModel(), this.model, OUTER_LAYER_LOCATION, poseStack, buffer, packedLight, entity,
-				limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTicks, -1);
+		if (!TinyTakeoverCompat.usesBabyModel(entity)) {
+			coloredCutoutModelCopyLayerRender(this.getParentModel(), this.model, OUTER_LAYER_LOCATION, poseStack, buffer, packedLight, entity,
+					limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTicks, -1);
+		}
 	}
 	*///?}
 }
