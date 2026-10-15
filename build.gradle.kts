@@ -185,12 +185,18 @@ dependencies {
 	}
 
 	// Configs
-	implementation("folk.sisby:kaleido-config:${property("deps.kaleido")}")
+	if (fabric || !hasProperty("deps.mcqoy")) {
+		implementation("folk.sisby:kaleido-config:${property("deps.kaleido")}")
+	} else {
+		compileOnly("folk.sisby:kaleido-config:${property("deps.kaleido")}")
+	}
 	include("folk.sisby:kaleido-config:${property("deps.kaleido")}")
 
 	// McQoy
 	if (hasProperty("deps.mcqoy")) {
-		modLocalRuntime("dev.isxander:yet-another-config-lib:${property("deps.yacl")}-${loader}")
+		modLocalRuntime("dev.isxander:yet-another-config-lib:${property("deps.yacl")}-${loader}") {
+			if (!fabric) isTransitive = false
+		}
 		modLocalRuntime("maven.modrinth:mcqoy:${property("deps.mcqoy")}")
 	}
 
