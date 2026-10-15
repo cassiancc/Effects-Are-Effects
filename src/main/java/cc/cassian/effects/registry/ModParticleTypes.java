@@ -13,8 +13,11 @@ public class ModParticleTypes {
 
 
 	private static SimpleParticleType register(final String name, final boolean overrideLimiter) {
-		//~ if fabric 'new SimpleParticleType'-> 'FabricParticleTypes.simple'
+		//? fabric {
 		return Registry.register(BuiltInRegistries.PARTICLE_TYPE, EmbersAndIcicles.of(name), FabricParticleTypes.simple(overrideLimiter));
+		//?} else {
+		/*return Registry.register(BuiltInRegistries.PARTICLE_TYPE, EmbersAndIcicles.of(name), new SimpleParticleType(overrideLimiter) {});
+		*///?}
 	}
 	//?}
 

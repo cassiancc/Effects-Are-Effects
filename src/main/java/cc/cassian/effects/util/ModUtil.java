@@ -1,7 +1,7 @@
 package cc.cassian.effects.util;
 
-//? fabric {
 import cc.cassian.effects.EmbersAndIcicles;
+//? fabric {
 import net.fabricmc.loader.api.FabricLoader;
 //?} else {
 /*import net.neoforged.fml.ModList;

@@ -1,3 +1,4 @@
+//? fabric {
 package cc.cassian.effects.fabric.datagen;
 
 import cc.cassian.effects.fabric.datagen.providers.EmbersRecipeProvider;
@@ -11,3 +12,4 @@ public class EmbersDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(EmbersRecipeProvider::new);
 	}
 }
+//?}
