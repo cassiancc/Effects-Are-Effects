@@ -12,5 +12,7 @@ public class ModConfig extends WrappedConfig {
 	//? if <26.4 {
 	@Comment("Whether Ice, Packed Ice, Blue Ice and Frosted Ice use their 26.4 sounds")
 	public boolean newIceSounds = true;
+	@Comment("Whether Water next to Blue Ice freezes into Brittle Ice")
+	public boolean blueIceMakesBrittleIce = true;
 	//?}
 }

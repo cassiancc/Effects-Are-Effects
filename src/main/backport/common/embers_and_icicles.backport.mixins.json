@@ -3,7 +3,8 @@
   "package": "cc.cassian.effects.mixin.backport",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "BlockBehaviourAccessor"
+    "BlockBehaviourAccessor",
+    "LiquidBlockMixin"
   ],
   "client": [],
   "injectors": {
