@@ -1,0 +1,9 @@
+{
+  "parent": "embers_and_icicles:block/icicle_base",
+  "textures": {
+    "cross": "embers_and_icicles:block/icicle_down_base",
+    "side": "embers_and_icicles:block/icicle_side",
+    "top": "embers_and_icicles:block/icicle_top"
+  },
+  "render_type": "minecraft:cutout"
+}

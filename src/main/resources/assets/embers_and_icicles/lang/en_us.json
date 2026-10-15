@@ -15,5 +15,21 @@
   "item.embers_and_icicles.ice_ball": "Ice Ball",
   "item.embers_and_icicles.ice_cube": "Ice Cube",
   "subtitles.entity.ice_ball.break": "Ice Ball hits",
-  "subtitles.entity.ice_ball.throw": "Ice Ball flies"
+  "subtitles.entity.ice_ball.throw": "Ice Ball flies",
+  "biome.embers_and_icicles.ice_caves": "Ice Caves",
+  "block.embers_and_icicles.brittle_ice": "Brittle Ice",
+  "block.embers_and_icicles.ice_crystal": "Ice Crystal",
+  "block.embers_and_icicles.icicle": "Icicle",
+  "entity.embers_and_icicles.frostbite": "Frostbite",
+  "item.embers_and_icicles.frostbite_spawn_egg": "Frostbite Spawn Egg",
+  "subtitles.block.brittle_ice.crack": "Brittle Ice cracks",
+  "subtitles.block.generic.fall": "Something falls on a block",
+  "subtitles.block.icicle.land": "Icicle crashes down",
+  "subtitles.entity.drowned.converted_to_zombie": "Drowned converts to Zombie",
+  "subtitles.entity.frostbite.ambient": "Frostbite groans",
+  "subtitles.entity.frostbite.converted_to_zombie": "Frostbite converts to Zombie",
+  "subtitles.entity.frostbite.death": "Frostbite dies",
+  "subtitles.entity.frostbite.hurt": "Frostbite is hurt",
+  "subtitles.entity.husk.converted_to_zombie": "Husk converts to Zombie",
+  "subtitles.entity.zombie.converted_to_frostbite": "Zombie converts to Frostbite"
 }

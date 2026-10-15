@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "embers_and_icicles:icicle"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "embers_and_icicles:blocks/icicle"
+}
