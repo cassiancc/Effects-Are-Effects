@@ -285,11 +285,6 @@ tasks {
 		dependsOn("build")
 	}
 
-	if (stonecutter.eval(mcVersion, ">=26.4")) {
-		processResources {
-			exclude("**/freezing*", "**/ice_ball*")
-		}
-	}
 	if (stonecutter.eval(mcVersion, "<26.3")) {
 		processResources {
 			exclude("**/recipe/brewing*")
