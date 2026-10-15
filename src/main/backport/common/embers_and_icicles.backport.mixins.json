@@ -9,9 +9,13 @@
     "MushroomBlockMixin",
     "SnowLayerBlockMixin",
     "SpawnPlacementsInvoker",
-    "StrayMixin"
+    "StrayMixin",
+    "ZombieInvoker",
+    "ZombieMixin"
   ],
-  "client": [],
+  "client": [
+    "client.AbstractZombieRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

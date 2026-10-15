@@ -10,6 +10,8 @@ public class ModConfig extends WrappedConfig {
 	public boolean iceCubes = true;
 
 	//? if <26.4 {
+	@Comment("Whether Zombies turn into Frostbites, and Husks and Drowned into Zombies, after standing in Powder Snow")
+	public boolean freezingConversions = true;
 	@Comment("Whether Ice, Packed Ice, Blue Ice and Frosted Ice use their 26.4 sounds")
 	public boolean newIceSounds = true;
 	@Comment("Whether Water next to Blue Ice freezes into Brittle Ice")
